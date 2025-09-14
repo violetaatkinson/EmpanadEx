@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/styles.css" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+
+		<!-- Bootstrap Icons -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+
+		<!-- Google fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>EmpanadEx</title>
+	</head>
+	<body>
+		<!-- Navegacion -->
+		<nav
+			class="navbar navbar-expand-lg border-bottom position-relative py-1"
+			id="main-navbar"
+		>
+			<div class="container-fluid">
+				<!-- Logo -->
+				<a class="navbar-brand ms-4" href="../index.html">
+					<img src="../images/logo.png" alt="Logo" width="100" />
+				</a>
+
+				<!-- Botón hamburguesa -->
+				<button
+					class="navbar-toggler me-3"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<!-- Links de navegación -->
+				<div
+					class="collapse navbar-collapse justify-content-end bg-white p-3 rounded"
+					id="navbarNav"
+				>
+					<ul
+						class="navbar-nav d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center"
+					>
+						<li class="nav-item">
+							<a class="nav-link" href="../pages/carta.html"
+								>Nuestras EmpanadEX</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../pages/personalizar.html"
+								>Personalízala</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contáctanos</a>
+						</li>
+						<li class="nav-item">
+							<a
+								class="btn nav-btn d-flex align-items-center shadow-lg"
+								href="../pages/carrito.html"
+							>
+								<i class="bi bi-cart me-2"></i> Tu Pedido
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Main Picture Contact -->
+		<section class="hero">
+			<div id="header-contact">
+				<div class="hero-content-contact">
+					<h1 class="display-4 fw-bold mb-4 text-uppercase">
+						Ponete en Contacto
+					</h1>
+					<p class="lead mb-4 hero-p fs-4">
+						¿Preguntas sobre nuestras EmpanadEX? ¿Queres hacer un pedido
+						especial? <br />
+						¡Estamos aquí para ayudarte!
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Aire Espacio -->
+		<div class="space-aire"></div>
+
+		<!-- Formulario -->
+		<div
+			class="container my-1 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-start gap-5"
+		>
+			<!-- Formulario a la Izquierda -->
+			<form class="p-4 rounded custom-form col-12 col-md-10 col-lg-6">
+				<h2 class="text-center mb-4">
+					Contáctanos <i class="bi bi-chat-dots me-2"></i>
+				</h2>
+
+				<!-- Nombre y Email -->
+				<div class="row mb-3">
+					<div class="col-md-6 mb-3 mb-md-0">
+						<label for="nombre" class="form-label">Nombre</label>
+						<input
+							type="text"
+							id="nombre"
+							class="form-control"
+							placeholder="Tu nombre"
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="email" class="form-label">Email</label>
+						<input
+							type="email"
+							id="email"
+							class="form-control"
+							placeholder="tuemail@gmail.com"
+						/>
+					</div>
+				</div>
+
+				<!-- Teléfono y Categoría -->
+				<div class="row mb-3">
+					<div class="col-md-6 mb-3 mb-md-0">
+						<label for="telefono" class="form-label">Teléfono</label>
+						<input
+							type="tel"
+							id="telefono"
+							class="form-control"
+							placeholder="Tu teléfono"
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="categoria" class="form-label"
+							>Categoría de consulta</label
+						>
+						<select id="categoria" class="form-select w-100">
+							<option selected disabled>Selecciona una categoría</option>
+							<option>Hacer un pedido especial</option>
+							<option>Pedido para un evento</option>
+							<option>Reclamo o sugerencia</option>
+							<option>Otro</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Asunto -->
+				<div class="row mb-3">
+					<div class="col-md-6 mb-3 mb-md-0">
+						<label for="Asunto" class="form-label">Asunto</label>
+						<input
+							type="text"
+							id="asunto"
+							class="form-control"
+							placeholder="¿En te podemos ayudar?"
+						/>
+					</div>
+					<div class="col-md-6 mb-3 mb-md-0">
+						<div class="">
+							<label for="coccion" class="form-label">Modo de preparación </label>
+							<select id="categoria" class="form-select w-100">
+								<option selected disabled>Elige la cocción 🥟</option>
+								<option>Fritas 🍳</option>
+								<option>Al horno 🔥</option>
+								<option>Congeladas ❄️</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<!-- Mensaje -->
+				<div class="mb-4">
+					<label for="mensaje" class="form-label">Mensaje</label>
+					<textarea
+						id="mensaje"
+						class="form-control"
+						rows="4"
+						placeholder="En detalle, contanos tu consulta"
+					></textarea>
+				</div>
+				<div class="mt-5 mb-0">
+					<button type="submit" class="btn custom-btn w-100">
+						Enviar mensaje
+					</button>
+				</div>
+			</form>
+
+			<!-- Columna derecha con los cards -->
+			<div class="d-flex flex-column gap-5 col-12 col-lg-6">
+				<!-- Card de redes -->
+				<div class="card p-3 custom-form text-center">
+					<div class="card-body d-flex flex-column justify-content-center">
+						<h2 class="card-title mb-4">Seguinos en <i class="bi bi-people me-2"></i></h2>
+						<div class="d-flex justify-content-center gap-3 mb-3 flex-wrap">
+							<a href="#" class="btn custom-btn w-auto">
+								<i class="bi bi-instagram me-2"></i> Instagram
+							</a>
+							<a href="#" class="btn custom-btn w-auto mb-2 mb-sm-0">
+								  <i class="bi bi-box-arrow-up me-2"></i>Compartir
+							</a>
+						</div>
+						<p class="card-text mt-2">
+							  Novedades y ofertas exclusivas. ¡Compartí con un amigo y obtené un descuento en tu próxima compra!
+
+						</p>
+					</div>
+				</div>
+
+				<!-- Card de notas importantes -->
+				<div class="card p-5 custom-form text-center">
+					<div class="card-body d-flex flex-column justify-content-center">
+						<h2 class="card-title mb-4">Notas 📝</h2>
+						<ul class="list-unstyled mb-0 text-start text-smaller">
+							<li class="mb-3 text-smallest">
+								🥟 <strong>Pedidos grandes:</strong> +20 , avisar 24hs.
+							</li>
+							<li class="mb-3 text-smallest">
+								🥟 <strong>Pickup:</strong> Preparación 40-60 min.
+							</li>
+							<li class="mb-3 text-smallest">
+								🥟 <strong>Pago:</strong> Venmo o efectivo.
+							</li>
+							<li class="mb-3 text-smallest">
+								🥟 <strong>Eventos:</strong> Pregunta por especiales.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Aire Espacio -->
+		<div class="space-aire"></div>
+
+		<!-- Footer -->
+		<footer class="border-top py-4 p-3 position-relative" id="footer">
+			<div class="container-fluid">
+				<div
+					class="row text-center text-md-start justify-content-center justify-content-md-start gap-md-4"
+				>
+					<!-- Columna 1: Logo y texto -->
+					<div
+						class="col-12 col-md-5 mb-3 mb-md-0 d-flex flex-column align-items-center align-items-md-start"
+					>
+						<a href="../index.html" class="ms-md-4">
+							<img
+								src="../images/logo.png"
+								alt="Logo EmpanadEX"
+								class="mb-1"
+								style="max-width: 150px"
+							/>
+						</a>
+						<p class="mb-0 fst-italic">
+							Empanadas caseras con ingredientes frescos y la mejor calidad.
+						</p>
+					</div>
+
+					<!-- Columna 2: Enlaces rápidos -->
+					<div class="col-12 col-md-3 mb-3 mb-md-0">
+						<h6 class="fw-bold mb-3 fs-5">Enlaces Rápidos</h6>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-2">
+								<a
+									href="../pages/carta.html"
+									class="text-decoration-none d-block text-body"
+									>Nuestras EmpanadEX</a
+								>
+							</li>
+							<li class="mb-2">
+								<a
+									href="../pages/personalizar.html"
+									class="text-decoration-none d-block text-body"
+									>Personalízala</a
+								>
+							</li>
+							<li class="mb-2">
+								<a
+									href="../pages/carrito.html"
+									class="text-decoration-none d-block text-body"
+									>Tu Pedido</a
+								>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-decoration-none d-block text-body"
+									>Contáctanos</a
+								>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Columna 3: Contacto -->
+					<div class="col-12 col-md-3">
+						<h6 class="fw-bold mb-3 fs-5">Contacto</h6>
+						<ul class="list-unstyled mb-0 contacto-icons">
+							<li class="mb-2">
+								<i class="bi bi-telephone-fill me-2"></i> +34 600 123 456
+							</li>
+							<li class="mb-2">
+								<i class="bi bi-envelope-fill me-2"></i> empanadex@gmail.com
+							</li>
+							<li class="mb-2">
+								<i class="bi bi-clock-fill me-2"></i> Jue - Dom: 16:00 - 21:00
+							</li>
+							<li class="mb-2">
+								<i class="bi bi-geo-alt-fill me-2"></i> Thousand Oaks,
+								California
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS  -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
