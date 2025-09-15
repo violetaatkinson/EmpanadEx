@@ -327,30 +327,120 @@ h1 h2 {
     font-weight: 400;
 }
 
+/*cómo se distribuyen las columnas:
+ repeat(auto-fill, ...) → significa: crea tantas columnas como quepan en el contenedor.
+minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máximo de 1 fracción de espacio*/
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*flex-grow: 1 significa: este elemento puede “crecer” para ocupar todo el espacio disponible dentro del contenedor padre.*/
+
+.card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    flex-grow: 1;
+    padding-bottom: 5px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+}
+
+.cantidad {
+    font-weight: 700;
+    color: #000000;
+    font-size:1.3rem;
+}
+
+.sumatoria {
+    display: none;
+    /* se activa dinámicamente con JS */
+}
+
+.card-buttons {
+    display: flex;
+    gap: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.card-buttons button {
+    border-radius: 50%; /* Botones completamente redondos */
+    transition: background 0.3s ease, border 0.3s ease;
+    padding: 0.8rem; /* Ajusta el tamaño del círculo */
+    border: 2px solid transparent; /* Se actualizará según el color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-signo {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Botón verde */
+.btn-mas {
+    background-color: #198754 !important;
+    border-color: #198754; /* borde igual que el fondo */
+}
+
 .btn-mas:hover {
     background-color: #198754 !important;
+    border-color: #198754;
+}
+
+/* Botón rojo */
+.btn-menos {
+    background-color: #dc3545 !important;
+    border-color: #dc3545; /* borde igual que el fondo */
 }
 
 .btn-menos:hover {
     background-color: #dc3545 !important;
+    border-color: #dc3545;
 }
 
-.btn-signo:hover {
-    color: #ffffff !important;
-}
-
-.cantidad {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    letter-spacing: 0.2rem;
-}
-
-.sumatoria {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
 
 
 #footer {
@@ -389,7 +479,6 @@ h1 h2 {
         line-height: 1.3;
         margin-bottom: 1.3rem;
         margin-top: 1.5rem
-        
     }
 
 

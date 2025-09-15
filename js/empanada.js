@@ -1,7 +1,7 @@
 // el código se ejecuta solo después de que el HTML esté cargado, Así evitamos errores de "no se encontró tal botón"
 document.addEventListener("DOMContentLoaded", () => {
-	//querySelectorAll → agarra todos los elementos con clase .card.h-100 (cada empanada), cards = empanadas
-	const cards = document.querySelectorAll(".card.h-100");
+	// Selecciona todas las cards dentro de .cards-container
+	const cards = document.querySelectorAll(".cards-container .card");
 
 	// forEach recorre todas las cards una por una.
 	cards.forEach((card) => {
