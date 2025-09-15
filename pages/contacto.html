@@ -106,53 +106,34 @@
 		<div class="space-aire"></div>
 
 		<!-- Formulario -->
-		<div
-			class="container my-1 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-start gap-5"
-		>
-			<!-- Formulario a la Izquierda -->
-			<form class="p-4 rounded custom-form col-12 col-md-10 col-lg-6">
-				<h2 class="text-center mb-4">
+		<div class="contact-container">
+			<!-- Formulario a la izquierda -->
+			<form class="custom-form contact-form">
+				<h2 class="form-title">
 					Contáctanos <i class="bi bi-chat-dots me-2"></i>
 				</h2>
 
 				<!-- Nombre y Email -->
-				<div class="row mb-3">
-					<div class="col-md-6 mb-3 mb-md-0">
-						<label for="nombre" class="form-label">Nombre</label>
-						<input
-							type="text"
-							id="nombre"
-							class="form-control"
-							placeholder="Tu nombre"
-						/>
+				<div class="form-row">
+					<div class="form-group">
+						<label for="nombre">Nombre</label>
+						<input type="text" id="nombre" placeholder="Tu nombre" />
 					</div>
-					<div class="col-md-6">
-						<label for="email" class="form-label">Email</label>
-						<input
-							type="email"
-							id="email"
-							class="form-control"
-							placeholder="tuemail@gmail.com"
-						/>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" placeholder="tuemail@gmail.com" />
 					</div>
 				</div>
 
 				<!-- Teléfono y Categoría -->
-				<div class="row mb-3">
-					<div class="col-md-6 mb-3 mb-md-0">
-						<label for="telefono" class="form-label">Teléfono</label>
-						<input
-							type="tel"
-							id="telefono"
-							class="form-control"
-							placeholder="Tu teléfono"
-						/>
+				<div class="form-row">
+					<div class="form-group">
+						<label for="telefono">Teléfono</label>
+						<input type="tel" id="telefono" placeholder="Tu teléfono" />
 					</div>
-					<div class="col-md-6">
-						<label for="categoria" class="form-label"
-							>Categoría de consulta</label
-						>
-						<select id="categoria" class="form-select w-100">
+					<div class="form-group">
+						<label for="categoria">Categoría de consulta</label>
+						<select id="categoria" class="custom-select">
 							<option selected disabled>Selecciona una categoría</option>
 							<option>Hacer un pedido especial</option>
 							<option>Pedido para un evento</option>
@@ -162,91 +143,64 @@
 					</div>
 				</div>
 
-				<!-- Asunto -->
-				<div class="row mb-3">
-					<div class="col-md-6 mb-3 mb-md-0">
-						<label for="Asunto" class="form-label">Asunto</label>
+				<!-- Asunto y Modo de preparación -->
+				<div class="form-row">
+					<div class="form-group">
+						<label for="asunto">Asunto</label>
 						<input
 							type="text"
 							id="asunto"
-							class="form-control"
-							placeholder="¿En te podemos ayudar?"
+							placeholder="¿En qué te podemos ayudar?"
 						/>
 					</div>
-					<div class="col-md-6 mb-3 mb-md-0">
-						<div class="">
-							<label for="coccion" class="form-label"
-								>Modo de preparación
-							</label>
-							<select id="categoria" class="form-select w-100">
-								<option selected disabled>Elige la cocción 🥟</option>
-								<option>Fritas 🍳</option>
-								<option>Al horno 🔥</option>
-								<option>Congeladas ❄️</option>
-							</select>
-						</div>
+					<div class="form-group">
+						<label for="coccion">Modo de preparación</label>
+						<select id="coccion" class="custom-select">
+							<option selected disabled>Elige la cocción 🥟</option>
+							<option>Fritas 🍳</option>
+							<option>Al horno 🔥</option>
+							<option>Congeladas ❄️</option>
+						</select>
 					</div>
 				</div>
 
 				<!-- Mensaje -->
-				<div class="mb-4">
-					<label for="mensaje" class="form-label">Mensaje</label>
+				<div class="form-group">
+					<label for="mensaje">Mensaje</label>
 					<textarea
 						id="mensaje"
-						class="form-control"
 						rows="4"
 						placeholder="En detalle, contanos tu consulta"
 					></textarea>
 				</div>
-				<div class="mt-5 mb-0">
-					<button type="submit" class="btn custom-btn w-100">
-						Enviar mensaje
-					</button>
-				</div>
+
+				<button type="submit" class="custom-btn">Enviar mensaje</button>
 			</form>
 
-			<!-- Columna derecha con los cards -->
-			<div class="d-flex flex-column gap-5 col-12 col-lg-6">
-				<!-- Card de redes -->
-				<div class="card p-3 custom-form text-center">
-					<div class="card-body d-flex flex-column justify-content-center">
-						<h2 class="card-title mb-4">
-							Seguinos en <i class="bi bi-people me-2"></i>
-						</h2>
-						<div class="d-flex justify-content-center gap-3 mb-3 flex-wrap">
-							<a href="#" class="btn custom-btn w-auto">
-								<i class="bi bi-instagram me-2"></i> Instagram
-							</a>
-							<a href="#" class="btn custom-btn w-auto mb-2 mb-sm-0">
-								<i class="bi bi-box-arrow-up me-2"></i>Compartir
-							</a>
-						</div>
-						<p class="card-text mt-2">
-							Novedades y ofertas exclusivas. ¡Compartí con un amigo y obtené un
-							descuento en tu próxima compra!
-						</p>
+			<!-- Columna derecha con cards -->
+			<div class="right-cards">
+				<!-- Card Redes -->
+				<div class="custom-form card">
+					<h2 class="form-title">Seguinos en <i class="bi bi-people"></i></h2>
+					<div class="card-buttons custom-form--air">
+						<a href="#" class="custom-btn">Instagram</a>
+						<a href="#" class="custom-btn">Compartir</a>
 					</div>
+					<p>
+						Novedades y ofertas exclusivas.<br> ¡Compartí con un amigo y obtené un
+						descuento!
+					</p>
 				</div>
 
-				<!-- Card de notas importantes -->
-				<div class="card p-5 custom-form text-center">
-					<div class="card-body d-flex flex-column justify-content-center">
-						<h2 class="card-title mb-4">Notas 📝</h2>
-						<ul class="list-unstyled mb-0 text-start text-smaller">
-							<li class="mb-3 text-smallest">
-								🥟 <strong>Pedidos grandes:</strong> +20 , avisar 24hs.
-							</li>
-							<li class="mb-3 text-smallest">
-								🥟 <strong>Pickup:</strong> Preparación 40-60 min.
-							</li>
-							<li class="mb-3 text-smallest">
-								🥟 <strong>Pago:</strong> Venmo o efectivo.
-							</li>
-							<li class="mb-3 text-smallest">
-								🥟 <strong>Eventos:</strong> Pregunta por especiales.
-							</li>
-						</ul>
-					</div>
+				<!-- Card Notas -->
+				<div class="custom-form card">
+					<h2 class="form-title">Notas 📝</h2>
+					<ul class="text-smaller">
+						<li>🥟 <strong>Pedidos grandes:</strong> +20 , avisar 24hs.</li>
+						<li>🥟 <strong>Pickup:</strong> Preparación 40-60 min.</li>
+						<li>🥟 <strong>Pago:</strong> Venmo o efectivo.</li>
+						<li>🥟 <strong>Eventos:</strong> Pregunta por especiales.</li>
+					</ul>
 				</div>
 			</div>
 		</div>
