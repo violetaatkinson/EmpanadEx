@@ -630,20 +630,18 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
         align-items: flex-start;
     }
 
-    /* Formulario más angosto */
+   
     .contact-form {
         flex: 1.2;
-        /* menos espacio */
+       
     }
 
-    /* Cards más anchas */
+   
     .right-cards {
         flex: 1.3;
-        /* más espacio que el form */
         display: flex;
         flex-direction: column;
         gap: 3.2rem;
-        /* separación entre Seguinos y Notas */
     }
 }
 
