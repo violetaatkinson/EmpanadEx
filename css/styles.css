@@ -12,6 +12,8 @@ h1 h2 {
     letter-spacing: 0.2rem;
 }
 
+/*-------------------- Navegacion--------------------------------------------------------------------------------------------- */
+
 .nav-item a {
     font-size: 19px !important;
     font-weight: 400;
@@ -48,6 +50,9 @@ h1 h2 {
     /* efecto de elevarse */
 }
 
+/*-------------------- Aire --------------------------------------------------------------------------------------------- */
+
+
 .space-aire {
     height: 50px;
     width: 100%;
@@ -81,14 +86,12 @@ h1 h2 {
     z-index: 1;
 }
 
-/* Contenido */
 .hero-content {
     position: relative;
     z-index: 2;
     color: white;
 }
 
-/* ===== Títulos y párrafos ===== */
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -105,7 +108,6 @@ h1 h2 {
     line-height: 35px;
 }
 
-/* ===== Botones ===== */
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
@@ -130,35 +132,6 @@ h1 h2 {
     color: #fff;
 }
 
-
-/* ===== Hero/banner contacto ===== */
-#header-contact {
-    position: relative;
-    background: url("../images/harina2.jpg") center center / cover no-repeat;
-    height: 350px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#header-contact::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 1;
-}
-
-/* Contenido específico de contacto */
-.hero-content-contact {
-    text-align: center;
-    padding: 1rem;
-}
 
 /* ===== Hero/banner personaliza ===== */
 #header-customize {
@@ -226,11 +199,13 @@ h1 h2 {
     color: white;
 }
 
-/* ===== Hero/banner carta ===== */
-#header-carta {
+
+/*--------- Pagina Contacto --------------------------------------------------------------------------------------------*/
+
+#header-contact {
     position: relative;
-    background: url("../images/empandas2.jpg") center center / cover no-repeat;
-    min-height: 350px;
+    background: url("../images/harina2.jpg") center center / cover no-repeat;
+    height: 350px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -238,8 +213,7 @@ h1 h2 {
     overflow: hidden;
 }
 
-/* Overlay */
-#header-carta::before {
+#header-contact::before {
     content: "";
     position: absolute;
     top: 0;
@@ -250,16 +224,11 @@ h1 h2 {
     z-index: 1;
 }
 
-/* Contenido específico */
-.hero-content-carta {
+.hero-content-contact {
     text-align: center;
     padding: 1rem;
-    position: relative;
-    z-index: 2;
-    color: white;
 }
 
-/*Pagina contacto*/
 .custom-form {
     box-shadow: 2px 2px 10px 2px rgba(47, 128, 199, 0.4) !important;
     border-radius: 10px !important;
@@ -297,13 +266,11 @@ h1 h2 {
     padding: 2rem;
 }
 
-
 .form-title {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1.5rem;
 }
-
 
 .form-row {
     display: flex;
@@ -373,7 +340,40 @@ button.custom-btn {
     text-align: justify;
 }
 
-/*Pagina Carta*/
+/*--------------------------Pagina Carta--------------------------------------------------------------------------------------------*/
+
+#header-carta {
+    position: relative;
+    background: url("../images/empandas2.jpg") center center / cover no-repeat;
+    min-height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Overlay */
+#header-carta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+/* Contenido específico */
+.hero-content-carta {
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
 .title-container {
     display: flex;
     flex-direction: column;
@@ -515,7 +515,7 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     border-color: #dc3545;
 }
 
-
+/*--------------------------Footer--------------------------------------------------------------------------------------------*/
 
 #footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.06) !important;
@@ -544,7 +544,7 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
 
 }
 
-/* Responsive */
+/*--------------Responsive--------------------------------------------------------------------------------------------*/
 @media (max-width: 768px) {
 
     .hero-content h1 {
@@ -629,10 +629,8 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     }
 }
 
+/*-----Responsive pantallas grandes (desktop)---------------------------------------------------------------------------------*/
 
-/* ======================
-   Responsive: pantallas grandes (desktop)
-====================== */
 @media (min-width: 992px) {
     .cards-container {
         grid-template-columns: repeat(4, 1fr); /* exactamente 4 columnas */
