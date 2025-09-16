@@ -30,11 +30,8 @@ h1 h2 {
 
 #main-navbar .nav-item .nav-btn {
     border: 2px solid #2f6bff;
-    /* color del borde */
     background-color: transparent;
-    /* fondo transparente */
     color: #000000;
-    /* texto blanco */
     padding: 0.5rem 1.2rem;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -45,7 +42,6 @@ h1 h2 {
     background-color: #2f6bff;
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(47, 128, 199, 0.4);
-    /* sombra azul suave */
     transform: translateY(-2px);
     /* efecto de elevarse */
 }
@@ -59,7 +55,7 @@ h1 h2 {
 }
 
 
-/* Hero/banner index */
+/*-----------Index - Home --------------------------------------------------------------------------------------------- */
 
 #header-index {
     position: relative;
@@ -133,7 +129,7 @@ h1 h2 {
 }
 
 
-/* ===== Hero/banner personaliza ===== */
+/*----------- Perzonaliza --------------------------------------------------------------------------------------------- */
 #header-customize {
     position: relative;
     background: url("../images/fresh3.jpg") center center / cover no-repeat;
@@ -145,7 +141,7 @@ h1 h2 {
     overflow: hidden;
 }
 
-/* Overlay */
+
 #header-customize::before {
     content: "";
     position: absolute;
@@ -157,7 +153,6 @@ h1 h2 {
     z-index: 1;
 }
 
-/* Contenido específico */
 .hero-content-customize {
     text-align: center;
     padding: 1rem;
@@ -166,7 +161,7 @@ h1 h2 {
     z-index: 2;
 }
 
-/* ===== Hero/banner carrito ===== */
+/*----------- Carrito --------------------------------------------------------------------------------------------- */
 #header-carrito {
     position: relative;
     background: url("../images/delivery.png") left center / cover no-repeat;
@@ -178,7 +173,7 @@ h1 h2 {
     overflow: hidden;
 }
 
-/* Overlay */
+
 #header-carrito::before {
     content: "";
     position: absolute;
@@ -190,7 +185,7 @@ h1 h2 {
     z-index: 1;
 }
 
-/* Contenido específico */
+
 .hero-content-carrito {
     text-align: center;
     padding: 1rem;
@@ -353,7 +348,7 @@ button.custom-btn {
     overflow: hidden;
 }
 
-/* Overlay */
+
 #header-carta::before {
     content: "";
     position: absolute;
@@ -365,7 +360,7 @@ button.custom-btn {
     z-index: 1;
 }
 
-/* Contenido específico */
+
 .hero-content-carta {
     text-align: center;
     padding: 1rem;
@@ -491,11 +486,11 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     color: #ffffff;
 }
 
-/* Botón verde */
+
 .btn-mas {
     background-color: #198754 !important;
     border-color: #198754;
-    /* borde igual que el fondo */
+
 }
 
 .btn-mas:hover {
@@ -503,11 +498,11 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     border-color: #198754;
 }
 
-/* Botón rojo */
+
 .btn-menos {
     background-color: #dc3545 !important;
     border-color: #dc3545;
-    /* borde igual que el fondo */
+    
 }
 
 .btn-menos:hover {
@@ -606,17 +601,16 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
         text-align: center;
     }
 
-    /* Contenedor principal apilado */
+    
     .contact-container {
         flex-direction: column;
         gap: 3rem;
-        /* espacio mayor entre contacto y cards */
+     
     }
 
-    /* Separación entre las cards en mobile */
+
     .right-cards .card {
         margin-bottom: 3rem;
-        /* espacio entre Seguinos y Notas */
     }
 
 
@@ -657,9 +651,9 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
 
 @media (min-width: 992px) {
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 3rem;
-        padding: 2rem 4rem;
+        padding: 2rem 2rem;
       
     }
 
