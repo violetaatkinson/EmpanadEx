@@ -422,7 +422,6 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     object-fit: cover;
 }
 
-/*flex-grow: 1 significa: este elemento puede “crecer” para ocupar todo el espacio disponible dentro del contenedor padre.*/
 
 .card-body {
     padding: 1.2rem;
@@ -453,8 +452,6 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     background-color: #ffffff !important;
     border: none !important;
 }
-
-
 
 .cantidad {
     font-weight: 700;
@@ -632,25 +629,14 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     }
 }
 
+
 /* ======================
-   Responsive: pantallas grandes
+   Responsive: pantallas grandes (desktop)
 ====================== */
 @media (min-width: 992px) {
-    .contact-container {
-        flex-direction: row;
-        gap: 2rem;
-        align-items: flex-start;
-    }
-
-    .contact-form {
-        flex: 1;
-    }
-
-    .right-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-        /* espacio entre Seguinos y Notas en desktop */
-        flex: 1;
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr); /* exactamente 4 columnas */
+        gap: 3rem; /* más espacio para que se vea parejo */
+        padding: 2rem 4rem; /* margen horizontal extra */
     }
 }
