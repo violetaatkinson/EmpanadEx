@@ -37,7 +37,7 @@
 			<div class="container-fluid">
 				<!-- Logo -->
 				<a class="navbar-brand ms-4" href="../index.html">
-					<img src="../images/logo.png" alt="Logo" width="100" />
+					<img src="../images/logo.png" alt="Logo" width="100"  class="logo" />
 				</a>
 
 				<!-- Botón hamburguesa -->
@@ -90,9 +90,9 @@
 			<div id="header-customize">
 				<div class="hero-content hero-content-customize">
 					<h1>Personaliza Tu EmpanadEX</h1>
-						<p class="hero-p">
-							Crea la EmpanadEx perfecta eligiendo tus ingredientes favoritos
-						</p>
+					<p class="hero-p">
+						Crea la EmpanadEx perfecta eligiendo tus ingredientes favoritos
+					</p>
 				</div>
 			</div>
 		</section>
@@ -101,252 +101,132 @@
 		<div class="space-aire"></div>
 
 		<!--  Sección Ingredientes -->
-		<div class="container py-4">
-			<div class="row justify-content-center">
-				<!-- Secciones Ingredientes (lado izquierdo, ancho) -->
-				<div class="col-12 col-lg-8 pe-lg-4 mb-5">
-					<!-- Sección Proteína -->
-					<div class="card p-4 mb-5">
-						<img
-							src="../images/meat.jpg"
-							class="card-img-top mb-3"
-							alt="Carne"
-							style="max-height: 200px; object-fit: cover; border-radius: 5px"
-						/>
-						<h5 class="card-title mb-4">1. Elige tu Proteína</h5>
-						<div class="row">
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="pollo" />
-									<label class="form-check-label" for="pollo">
-										Pollo jugoso desmenuzado
-										<span class="text-muted">+ $2</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="cerdo" />
-									<label class="form-check-label" for="cerdo">
-										Carne de cerdo <span class="text-muted">+ $2</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="ternera"
-									/>
-									<label class="form-check-label" for="ternera">
-										Carne de ternera y cerdo
-										<span class="text-muted">+ $3</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="jamon" />
-									<label class="form-check-label" for="jamon">
-										Jamón cocido <span class="text-muted">+ $2</span>
-									</label>
-								</div>
-							</div>
+		<div class="custom-container">
+			<div class="custom-grid">
+				<!-- Secciones Ingredientes (lado izquierdo) -->
+				<div class="ingredients">
+					<!-- Proteína -->
+					<div class="custom-card">
+						<img src="../images/meat.jpg" alt="Carne" class="card-img" />
+						<h5 class="card-title">1. Elige tu Proteína</h5>
+						<div class="options-grid">
+							<label class="option">
+								<input type="checkbox" id="pollo" />
+								Pollo desmenuzado <span class="muted">+ $2</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="cerdo" />
+								Carne de cerdo <span class="muted">+ $2</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="ternera" />
+								Carne de ternera y cerdo <span class="muted">+ $3</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="jamon" />
+								Jamón cocido <span class="muted">+ $2</span>
+							</label>
 						</div>
 					</div>
 
-					<!-- Sección Vegetales -->
-					<div class="card p-4 mb-5">
+					<!-- Vegetales -->
+					<div class="custom-card">
 						<img
 							src="../images/veggies 2.jpg"
-							class="card-img-top mb-3"
 							alt="Vegetales"
-							style="max-height: 200px; object-fit: cover; border-radius: 5px"
+							class="card-img"
 						/>
-						<h5 class="card-title mb-4">2. Agrega tus Vegetales</h5>
-						<div class="row">
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="Espinacas"
-									/>
-									<label class="form-check-label" for="Espinacas"/>
-										Espinacas <span class="text-muted">+ $ 0.5</span>
-									</label>
-								</div>
-							</div>
-							
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="Maíz dulce"
-									/>
-									<label class="form-check-label" for="Maíz dulce">
-										 Maíz dulce <span class="text-muted">+ $ 0.5</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="Cebolla y Morrón " />
-									<label class="form-check-label" for="Cebolla y Morrón ">
-										Cebolla y Morrón <span class="text-muted">+ $ 1</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="Champiñones" />
-									<label class="form-check-label" for="Champiñones">
-										Champiñones<span class="text-muted">+ $ 0.75</span>
-									</label>
-								</div>
-							</div>
+						<h5 class="card-title">2. Agrega tus Vegetales</h5>
+						<div class="options-grid">
+							<label class="option">
+								<input type="checkbox" id="Espinacas" />
+								Espinacas <span class="muted">+ $0.5</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="Maiz" />
+								Maíz dulce <span class="muted">+ $0.5</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="Cebolla" />
+								Cebolla y Morrón <span class="muted">+ $1</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="Champiñones" />
+								Champiñones <span class="muted">+ $0.75</span>
+							</label>
 						</div>
 					</div>
 
-					<!-- Sección Frutas -->
-					<div class="card p-4 mb-5">
-						<img
-							src="../images/fruit4.jpg"
-							class="card-img-top mb-3"
-							alt="Frutas"
-							style="max-height: 200px; object-fit: cover; border-radius: 5px"
-						/>
-						<h5 class="card-title mb-4">3. Combina con una Fruta</h5>
-						<div class="row">
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="manzana"
-									/>
-									<label class="form-check-label" for="manzana">
-										Manzana <span class="text-muted">+ $ 1</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="pera" />
-									<label class="form-check-label" for="pera">
-										Pera <span class="text-muted">+ $ 1</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="anana" />
-									<label class="form-check-label" for="anana">
-										Ananá <span class="text-muted">+ $ 1.5</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="durazno"
-									/>
-									<label class="form-check-label" for="durazno">
-										Durazno <span class="text-muted">+ $ 1.25</span>
-									</label>
-								</div>
-							</div>
+					<!-- Frutas -->
+					<div class="custom-card">
+						<img src="../images/fruit4.jpg" alt="Frutas" class="card-img" />
+						<h5 class="card-title">3. Combina con una Fruta</h5>
+						<div class="options-grid">
+							<label class="option">
+								<input type="checkbox" id="manzana" />
+								Manzana <span class="muted">+ $1</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="pera" />
+								Pera <span class="muted">+ $1</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="anana" />
+								Ananá <span class="muted">+ $1.5</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="durazno" />
+								Durazno <span class="muted">+ $1.25</span>
+							</label>
 						</div>
 					</div>
 
-					<!-- Sección Queso -->
-					<div class="card p-4 mb-5">
-						<img
-							src="../images/chesee.jpg"
-							class="card-img-top mb-3"
-							alt="Queso"
-							style="max-height: 200px; object-fit: cover; border-radius: 5px"
-						/>
-						<h5 class="card-title mb-4">4. Elige tu Queso</h5>
-						<div class="row">
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="mozzarella"
-									/>
-									<label class="form-check-label" for="mozzarella">
-										Mozzarella <span class="text-muted">+ $ 1</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="ricotta"
-									/>
-									<label class="form-check-label" for="ricotta">
-										Ricotta <span class="text-muted">+ $ 1.25</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="provolone"
-									/>
-									<label class="form-check-label" for="provolone">
-										Provolone <span class="text-muted">+ $ 1.5</span>
-									</label>
-								</div>
-							</div>
-							<div class="col-6 mb-3">
-								<div class="form-check">
-									<input
-										class="form-check-input"
-										type="checkbox"
-										id="Roquefort"
-									/>
-									<label class="form-check-label" for="Roquefort">
-										Roquefort <span class="text-muted">+ $ 1.5</span>
-									</label>
-								</div>
-							</div>
+					<!-- Quesos -->
+					<div class="custom-card">
+						<img src="../images/chesee.jpg" alt="Queso" class="card-img" />
+						<h5 class="card-title">4. Elige tu Queso</h5>
+						<div class="options-grid">
+							<label class="option">
+								<input type="checkbox" id="mozzarella" />
+								Mozzarella <span class="muted">+ $1</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="ricotta" />
+								Ricotta <span class="muted">+ $1.25</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="provolone" />
+								Provolone <span class="muted">+ $1.5</span>
+							</label>
+							<label class="option">
+								<input type="checkbox" id="roquefort" />
+								Roquefort <span class="muted">+ $1.5</span>
+							</label>
 						</div>
 					</div>
 				</div>
 
 				<!-- Resumen (lado derecho) -->
-				<div class="col-12 col-lg-4">
-					<div class="card p-3 text-center">
+				<div class="summary">
+					<div class="custom-card text-center">
 						<img
 							src="../images/empanadas3.jpg"
-							class="img-fluid mb-3"
 							alt="empanada resumen"
-							style="max-height: 150px; object-fit: cover; border-radius: 8px"
+							class="summary-img"
 						/>
 						<h5 class="card-title">Tu Empanada Personalizada</h5>
-						<p class="text-muted">Con tus ingredientes </p>
+						<p class="muted">Con tus ingredientes</p>
 						<hr />
-						<div class="d-flex justify-content-between">
-							<span>Masa de empanada</span>
-							<span>$ 1</span>
+						<div class="summary-row">
+							<span >Masa de empanada</span>
+							<span class="muted" style="font-size: 0.9rem;">$0.5</span>
 						</div>
-						<div class="d-flex justify-content-between fw-bold mt-2">
+						<div class="summary-row total">
 							<span>Total:</span>
-							<span class="text-primary">$1</span>
+							<span class="highlight">$1</span>
 						</div>
-						<button class="btn btn-primary mt-4 w-100"> <i class="bi bi-cart me-2"></i>
-							 Agregar al Carrito
+						<button class="custom-btn full">
+							 Agregar al Carrito <i class="bi bi-cart"></i>
 						</button>
 					</div>
 				</div>
@@ -367,7 +247,7 @@
 							<img
 								src="../images/logo.png"
 								alt="Logo EmpanadEX"
-								class="mb-1"
+								class="mb-1 logo"
 								style="max-width: 150px"
 							/>
 						</a>
