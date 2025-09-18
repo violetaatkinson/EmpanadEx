@@ -178,7 +178,7 @@ h1 h2 {
 .custom-grid {
     display: grid;
     grid-template-columns: 1fr;
-   
+
 }
 
 /* Tarjetas */
@@ -189,7 +189,7 @@ h1 h2 {
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-bottom: 2.5rem;
-  
+
 }
 
 .card-img {
@@ -203,7 +203,7 @@ h1 h2 {
 .card-title {
     font-size: 1.2rem;
     margin-bottom: 0.8rem !important;
-  
+
     font-weight: bold;
 }
 
@@ -212,7 +212,7 @@ h1 h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem 2rem;
-  
+
 }
 
 .option {
@@ -810,7 +810,7 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     .custom-grid {
         grid-template-columns: 2fr 1fr;
         gap: 4rem;
-        
+
     }
 }
 
@@ -819,4 +819,59 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     .cards-container {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .custom-container {
+        max-width: 1400px;
+        padding: 3rem;
+    }
+
+    .custom-grid {
+        grid-template-columns: 4fr 3fr;
+        gap: 5rem;
+    }
+
+    .custom-card {
+        padding: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .card-img {
+        max-height: 250px;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .option {
+        font-size: 1.1rem;
+    }
+
+    .muted {
+        font-size: 1.1rem !important;
+    }
+
+    .summary-row span {
+        font-size: 1.2rem;
+    }
+
+    .summary-row.total span {
+        font-size: 1.2rem;
+    }
+
+    .summary {
+        width: 100%;
+    }
+
+    .summary-img {
+        max-height: 200px;
+    }
+
+    .custom-btn.full {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+    }
+
+
+
 }
