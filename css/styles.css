@@ -181,7 +181,6 @@ h1 h2 {
 
 }
 
-
 .custom-card {
     background: #fff;
     border-radius: 8px;
@@ -444,9 +443,27 @@ h1 h2 {
 
 .contact-container {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 4rem;
+}
+
+
+.contact-form {
+    flex: 1; 
+    box-shadow: 2px 2px 10px rgba(47, 128, 199, 0.4);
+    border-radius: 10px;
+    background-color: #fff;
+    gap: 1.5rem;
+}
+
+.right-cards {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
+     gap: 3.3rem; 
 }
 
 .form-title {
@@ -457,15 +474,16 @@ h1 h2 {
 
 .form-row {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .form-group {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .form-group label {
@@ -485,8 +503,9 @@ select {
 
 button.custom-btn {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 2.3rem;
     text-align: center;
+    margin-bottom: 0.7rem;
 }
 
 .right-cards .card {
@@ -496,6 +515,7 @@ button.custom-btn {
     align-items: center;
     text-align: center;
 }
+
 
 .card-buttons {
     display: flex;
@@ -578,9 +598,7 @@ button.custom-btn {
     font-weight: 400;
 }
 
-/*cómo se distribuyen las columnas:
- repeat(auto-fill, ...) → significa: crea tantas columnas como quepan en el contenedor.
-minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máximo de 1 fracción de espacio*/
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -891,9 +909,47 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
         gap: 3rem;
     }
 
-    .right-cards .card {
-        margin-bottom: 3rem;
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 600px;
+        /* más angosto */
+        margin: 0 auto;
+        padding: 1.5rem;
     }
+
+    .form-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        flex: 1 1 45%;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 1px solid grey;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    button.custom-btn {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        margin-top: 1rem;
+    }
+
+    
 
     .custom-grid {
         grid-template-columns: 1fr;
@@ -937,7 +993,7 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     }
 
     .custom-grid {
-        gap:2rem;
+        gap: 2rem;
     }
 
     .contact-container {
@@ -982,7 +1038,7 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;
-        gap: 4rem;
+        gap: 5rem;
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1rem;
@@ -1068,6 +1124,68 @@ minmax(280px, 1fr) → cada columna tendrá un ancho mínimo de 280px y un máxi
     .custom-btn.full {
         font-size: 1.2rem;
         padding: 1rem 1.5rem;
+    }
+
+       .contact-container {
+        display: flex;               
+        flex-direction: row;         
+        justify-content: space-between;
+        align-items: flex-start;   
+        gap: 5rem;                   
+        max-width: 1400px;           
+        margin: 0 auto;           
+        padding: 2rem;
+    }
+
+    .contact-form {
+        flex: 2;                     
+        max-width: 650px;           
+        padding: 2rem;
+        box-shadow: 2px 2px 10px rgba(47,128,199,0.4);
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    button.custom-btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .right-cards {
+        flex: 1;                     
+        display: flex;
+        flex-direction: column;      
+        gap: 4.5rem; 
+        margin-top: 1.5rem;                  
+    }
+
+    .right-cards .card {
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 2px 2px 10px rgba(47,128,199,0.4);
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 0px !important;
+    }
+
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
 }
