@@ -67,7 +67,7 @@ h1 h2 {
 #header-index {
     position: relative;
     background: url("../images/empanadas.jpg") center center / cover no-repeat;
-    height: 350px;
+    height: 400px;
     /* altura del hero */
     display: flex;
     align-items: center;
@@ -255,7 +255,7 @@ h1 h2 {
 #header-customize {
     position: relative;
     background: url("../images/fresh3.jpg") center center / cover no-repeat;
-    min-height: 350px;
+    min-height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -398,7 +398,7 @@ h1 h2 {
 #header-carrito {
     position: relative;
     background: url("../images/delivery.png") left center / cover no-repeat;
-    min-height: 350px;
+    min-height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -493,7 +493,7 @@ h1 h2 {
 #header-contact {
     position: relative;
     background: url("../images/harina2.jpg") center center / cover no-repeat;
-    height: 350px;
+    height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -658,7 +658,7 @@ button.custom-btn {
 #header-carta {
     position: relative;
     background: url("../images/empandas2.jpg") center center / cover no-repeat;
-    min-height: 350px;
+    min-height: 400px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1006,6 +1006,7 @@ button.custom-btn {
         margin-top: 20px;
         justify-content: center;
         font-size: 1rem;
+        gap:2rem
     }
 
     .custom-form p {
@@ -1070,53 +1071,42 @@ button.custom-btn {
         text-align: center;
     }
 
-
     .contact-container {
-        flex-direction: column;
-        gap: 3rem;
+        display: flex;
+        flex-direction: column; 
+        gap: 3.5rem;
+        padding: 0 1.2rem; 
     }
 
     .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        max-width: 600px;
-        /* más angosto */
-        margin: 0 auto;
-        padding: 1.5rem;
+        width: 100%;
+        max-width: none; 
+    }
+
+    .right-cards {
+        width: 100%; 
     }
 
     .form-row {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
+        flex-direction: column; 
     }
 
     .form-group {
-        flex: 1 1 45%;
-        min-width: 200px;
-        display: flex;
-        flex-direction: column;
+        width: 100%;
     }
 
-    input,
-    select,
-    textarea {
-        width: 100%;
-        padding: 0.5rem 1rem;
-        border: 1px solid grey;
-        border-radius: 8px;
-        font-size: 1rem;
+    .custom-form input,
+    .custom-form select,
+    .custom-form textarea {
+        width: 100%; 
+        box-sizing: border-box;
     }
 
     button.custom-btn {
         width: 100%;
         padding: 0.7rem 1rem;
-        margin-top: 1rem;
+        margin-top: 2.5rem;
     }
-
-
 
     .custom-grid {
         grid-template-columns: 1fr;
