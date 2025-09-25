@@ -310,7 +310,7 @@ h1 h2 {
     margin-bottom: 1rem;
 }
 
-.card-title {
+.custom-card-title {
     font-size: 1.2rem;
     margin-bottom: 0.8rem !important;
     font-weight: bold;
@@ -330,6 +330,11 @@ h1 h2 {
     line-height: 1.5;
 }
 
+.muted-custom {
+    color: #777;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
 
 .muted {
     color: #777;
@@ -740,12 +745,14 @@ button.custom-btn {
     font-weight: 700;
     margin-bottom: 1.2rem;
     color: #333;
+    text-align: center;
 }
 
 .card-text {
     font-size: 1rem;
     color: #555;
     flex-grow: 1;
+    text-align: center;
 }
 
 .card-footer {
