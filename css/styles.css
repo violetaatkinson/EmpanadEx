@@ -140,7 +140,7 @@ h1 h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -1285,10 +1285,12 @@ button.custom-btn {
         gap: 3rem;
 
     }
+
+    
 }
 
 /* Pantallas MUY grandes (monitores grandes) */
-@media (min-width: 1280px) {
+@media (min-width: 1400px) {
 
 
     .custom-container {
@@ -1405,4 +1407,6 @@ button.custom-btn {
         flex-direction: column;
     }
 
+
+   
 }
