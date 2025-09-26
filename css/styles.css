@@ -169,6 +169,7 @@ h1 h2 {
 
 .index-title {
     margin-bottom: 0.9rem;
+    margin-top: 0.8rem;
 }
 
 .index-subtitle {
@@ -176,6 +177,7 @@ h1 h2 {
     font-size: 400;
     font-size: 1rem;
     margin-bottom: 1rem;
+     margin-top: 0.6rem;
 }
 
 .index-reviews {
