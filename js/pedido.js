@@ -1,59 +1,104 @@
-// pedido.js = lee lo guardado, lo muestra y permite confirmar.
 document.addEventListener("DOMContentLoaded", () => {
-  const emptyCardSection = document.querySelector(".empty-card"); // mensaje si el carrito está vacío
-  const pedidoSection = document.querySelector(".pedido"); // bloque con el resumen del pedido
+  const emptyCardSection = document.querySelector(".empty-card");
+  const pedidoSection = document.querySelector(".pedido");
   const pedidoForm = document.querySelector(".pedido-form");
-  const totalPrecioElemento = pedidoForm.querySelector(".pedido-precio"); // donde se muestra el total
+  const totalPrecioElemento = pedidoForm.querySelector(".pedido-precio");
 
-  // 👉 Traemos el carrito desde localStorage. Si no había nada → array vacío.
   const pedidoGuardado = JSON.parse(localStorage.getItem("pedido")) || [];
 
+  const hr = pedidoForm.querySelector("hr");
+
   if (pedidoGuardado.length === 0) {
-    // si el pedido está vacío, mostramos mensaje y ocultamos resumen
     emptyCardSection.classList.remove("d-none");
     pedidoSection.classList.add("d-none");
+    totalPrecioElemento.textContent = `$0.50`;
+    hr.style.display = "none";
     return;
   }
 
-  // Sí hay pedido → mostramos el resumen
   emptyCardSection.classList.add("d-none");
   pedidoSection.classList.remove("d-none");
 
   let totalGeneral = 0;
-  const hr = pedidoForm.querySelector("hr");
 
-  pedidoGuardado.forEach((item) => {
-    const div = document.createElement("div"); // creo un div
-    div.classList.add("pedido-cont", "item"); // le agrego clases
+  pedidoGuardado.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.classList.add("pedido-cont", "item");
 
-    // 👉 Aquí se cambia la lógica para mostrar ingredientes si es especial
-    div.innerHTML = `
-      <div>
-        <h6 class="pedido-nombre">${item.empanada}</h6>
-        ${
-          item.empanada.includes("Especial")
-            ? `<span class="pedido-detalles" style="font-size:0.85rem;color:#555;display:block;margin-top:3px;">${item.detalles}</span>`
-            : `<span class="pedido-cuanto">${item.cantidad} x $${item.precioUnitario.toFixed(2)}</span>`
-        }
-      </div>
-      <h6 class="pedido-precio">$${item.subtotal.toFixed(2)}</h6>
-    `;
+    // Nombre
+    const nombreDiv = document.createElement("div");
+    nombreDiv.classList.add("pedido-info");
 
-    // 👉 Inserta el div antes del <hr> dentro del formulario
+    const nombreSpan = document.createElement("span");
+    nombreSpan.classList.add("pedido-nombre");
+    nombreSpan.textContent = item.empanada;
+    nombreDiv.appendChild(nombreSpan);
+
+    if (item.empanada.includes("Especial")) {
+      const detallesSpan = document.createElement("span");
+      detallesSpan.classList.add("pedido-cuanto", "detalle-especial");
+      detallesSpan.textContent = item.detalles;
+      nombreDiv.appendChild(detallesSpan);
+    } else {
+      const cantidadSpan = document.createElement("span");
+      cantidadSpan.classList.add("pedido-cuanto");
+      cantidadSpan.textContent = `${item.cantidad} x $${item.precioUnitario.toFixed(2)}`;
+      nombreDiv.appendChild(cantidadSpan);
+    }
+
+    // Tacho
+    const tachoDiv = document.createElement("div");
+    tachoDiv.classList.add("pedido-tacho");
+    tachoDiv.innerHTML = trashSVG();
+    tachoDiv.dataset.index = index;
+    tachoDiv.addEventListener("click", () => {
+      eliminarItem(index);
+    });
+
+    // Precio
+    const precioDiv = document.createElement("div");
+    precioDiv.classList.add("pedido-precio-div");
+
+    const precioSpan = document.createElement("span");
+    precioSpan.classList.add("pedido-precio");
+    precioSpan.textContent = `$${item.subtotal.toFixed(2)}`;
+    precioDiv.appendChild(precioSpan);
+
+    // Contenedor final
+    div.appendChild(nombreDiv);
+    div.appendChild(tachoDiv);
+    div.appendChild(precioDiv);
+
     pedidoForm.insertBefore(div, hr);
 
-    // 👉 Sumar subtotales para calcular total general
     totalGeneral += item.subtotal;
   });
 
   totalPrecioElemento.textContent = `$${totalGeneral.toFixed(2)}`;
 
-  // Confirmar pedido
   if (pedidoForm) {
     pedidoForm.addEventListener("submit", (e) => {
-      e.preventDefault(); // evitamos recarga de página
-      localStorage.removeItem("pedido"); // vaciamos carrito
-      window.location.href = "gracias.html"; // redirigimos
+      e.preventDefault();
+      localStorage.removeItem("pedido");
+      window.location.href = "gracias.html";
     });
   }
+
+  function eliminarItem(index) {
+    const pedido = JSON.parse(localStorage.getItem("pedido")) || [];
+    pedido.splice(index, 1);
+    localStorage.setItem("pedido", JSON.stringify(pedido));
+    window.location.reload();
+  }
+
+  function trashSVG() {
+    return `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2f6bff" viewBox="0 0 24 24">
+        <path d="M3 6h18v2H3V6zm2 3h14v13H5V9zm3 2v9h2v-9H8zm4 0v9h2v-9h-2z"/>
+      </svg>
+    `;
+  }
+
+  // Mostrar u ocultar <hr> si no hay items
+  hr.style.display = pedidoGuardado.length > 0 ? "block" : "none";
 });

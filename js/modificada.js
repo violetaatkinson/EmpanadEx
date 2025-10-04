@@ -1,8 +1,13 @@
+// modificada.js = maneja la creación de empanadas personalizadas
 document.addEventListener("DOMContentLoaded", () => {
   const createEmpanadaBtn = document.querySelector(".custom-btn.full");
   const listaEspecialesEl = document.querySelector(".especiales-list");
   const totalHighlight = document.querySelector(".summary-row.total .highlight");
-  const precioMasa = 0.5; // Precio fijo masa
+  const precioMasa = 0.5; // Precio fijo masa mínima
+
+  // ------------------------------------------
+  // FUNCIONES AUXILIARES
+  // ------------------------------------------
 
   function getSeleccionados() {
     return Array.from(document.querySelectorAll(".ingredients input:checked"));
@@ -25,19 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("pedido", JSON.stringify(pedido));
   }
 
+  // ------------------------------------------
+  // DIBUJAR EMPANADA ESPECIAL EN EL RESUMEN
+  // ------------------------------------------
   function dibujarEspecial(item, index) {
+    // contenedor principal de la empanada especial
     const div = document.createElement("div");
     div.classList.add("summary-row", "especial-item");
-    div.style.display = "flex";
-    div.style.flexDirection = "column";
-    div.style.marginBottom = "10px";
-  
 
-    // BLOQUE 1: Nombre + basura + precio
+    // BLOQUE 1: Nombre + icono basura + precio
     const bloque1 = document.createElement("div");
-    bloque1.style.display = "flex";
-    bloque1.style.justifyContent = "space-between";
-    bloque1.style.alignItems = "center";
+    bloque1.classList.add("especial-header");
 
     const nombreSpan = document.createElement("span");
     nombreSpan.textContent = item.empanada;
@@ -45,8 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const trashSpan = document.createElement("span");
     trashSpan.classList.add("trash-icon");
     trashSpan.innerHTML = trashSVG();
-    trashSpan.style.cursor = "pointer";
-    trashSpan.style.display = "none";
+    trashSpan.style.display = "none"; // oculto por defecto
 
     const precioSpan = document.createElement("span");
     precioSpan.textContent = `$${item.precioUnitario.toFixed(2)}`;
@@ -57,19 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // BLOQUE 2: Ingredientes
     const bloque2 = document.createElement("div");
+    bloque2.classList.add("especial-detalles");
     bloque2.textContent = item.detalles;
-    bloque2.style.fontSize = "0.9rem";
-    bloque2.style.color = "#555";
-    bloque2.style.marginTop = "3px";
-    bloque2.style.textAlign = "left";
-   
 
     div.appendChild(bloque1);
     div.appendChild(bloque2);
-
     listaEspecialesEl.appendChild(div);
 
-    // Mostrar icono basura al pasar mouse
+    // mostrar icono basura al pasar mouse
     div.addEventListener("mouseenter", () => {
       trashSpan.style.display = "inline-block";
     });
@@ -82,6 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ------------------------------------------
+  // CARGAR TODAS LAS ESPECIALES GUARDADAS
+  // ------------------------------------------
   function cargarEspeciales() {
     listaEspecialesEl.innerHTML = "";
 
@@ -89,15 +89,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const especiales = pedido.filter(it => it.empanada && it.empanada.includes("Especial"));
 
     let total = 0;
-
     especiales.forEach((it, i) => {
       dibujarEspecial(it, i);
       total += it.subtotal;
     });
 
-    totalHighlight.textContent = `$${total.toFixed(2)}`;
+    // 👉 Si no hay especiales, el total debe ser al menos 0.50
+    if (especiales.length === 0) {
+      totalHighlight.textContent = `$${precioMasa.toFixed(2)}`;
+    } else {
+      totalHighlight.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // 👉 Mostrar/ocultar hr con clase .espacio-arriba
+    const hrEspecial = document.querySelector(".espacio-arriba");
+    if (hrEspecial) {
+      if (especiales.length === 0) {
+        hrEspecial.style.display = "none";
+      } else {
+        hrEspecial.style.display = "block";
+      }
+    }
   }
 
+  // ------------------------------------------
+  // CREAR NUEVA EMPANADA ESPECIAL
+  // ------------------------------------------
   createEmpanadaBtn.addEventListener("click", () => {
     const seleccionados = getSeleccionados();
 
@@ -125,16 +142,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cargarEspeciales();
 
-    document.querySelectorAll(".ingredients input").forEach(i => i.checked = false);
+    // limpiar inputs
+    document.querySelectorAll(".ingredients input").forEach(i => (i.checked = false));
 
-    alert("🌟 ¡Empanada especial agregada!");
+    alert("🥟🌟 ¡Empanada especial creada, se agregará al pedido!");
   });
 
+  // ------------------------------------------
+  // ELIMINAR EMPANADA ESPECIAL
+  // ------------------------------------------
   function eliminarEspecial(index) {
     const pedido = leerPedido();
     const especiales = pedido.filter(it => it.empanada && it.empanada.includes("Especial"));
-
     const realIndex = pedido.indexOf(especiales[index]);
+
     if (realIndex > -1) {
       pedido.splice(realIndex, 1);
       guardarPedido(pedido);
@@ -142,6 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ------------------------------------------
+  // SVG del icono basura
+  // ------------------------------------------
   function trashSVG() {
     return `
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2f6bff" viewBox="0 0 24 24">
@@ -150,5 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  // inicializo cargando especiales guardadas
   cargarEspeciales();
 });

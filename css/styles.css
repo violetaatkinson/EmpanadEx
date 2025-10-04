@@ -177,7 +177,7 @@ h1 h2 {
     font-size: 400;
     font-size: 1rem;
     margin-bottom: 1rem;
-     margin-top: 0.6rem;
+    margin-top: 0.6rem;
 }
 
 .index-reviews {
@@ -292,7 +292,9 @@ h1 h2 {
 
 .custom-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+    align-items: flex-start;
 }
 
 .custom-card {
@@ -374,17 +376,34 @@ h1 h2 {
     color: #0f3c4a;
 }
 
-.azul{
-    color: #2f6bff;;
+.azul {
+    color: #2f6bff;
+    ;
 }
 
+.especial-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.especial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .especial-detalles {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 1rem;
-  text-align: left;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 3px;
+    text-align: left;
 }
+
+.trash-icon {
+    cursor: pointer;
+}
+
 
 .espacio-arriba {
     margin-top: 1.8rem;
@@ -458,7 +477,7 @@ h1 h2 {
 
 .empty-card-img {
     border-radius: 50%;
-    height: 500px;
+    height: 450px;
     margin-bottom: 1rem;
 }
 
@@ -508,63 +527,93 @@ h1 h2 {
     transform: translateY(-2px) !important;
 }
 
+
 .pedido {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .pedido-contenedor {
-  width: 100%;
-  max-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Mucho más ancho */
 }
 
 .pedido-form {
-  padding: 20px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 700px;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Aumenta el ancho máximo */
+    background-color: #fff;
 }
 
 .pedido-cont {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente todos los elementos */
+    justify-content: space-between;
+    margin-bottom: 12px;
+    width: 100%;
 }
 
 .pedido-info {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra el texto verticalmente */
+    flex: 1;
+    text-align: left;
 }
 
 .pedido-nombre {
-  font-size: 1rem;
-  margin: 0;
+    font-size: 1rem;
+    margin: 0;
 }
 
 .pedido-cuanto {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  color: #888;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 3px;
+}
+
+.detalle-especial {
+    font-style: italic;
+}
+
+.pedido-tacho {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Centra el icono verticalmente */
+    cursor: pointer;
+}
+
+.pedido-precio-div {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    /* Centra el precio verticalmente */
+    justify-content: flex-end;
 }
 
 .pedido-precio {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-
-.pedido-cont.total .pedido-nombre {
-  font-weight: bold;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .pedido-cont.total .pedido-precio {
-  font-size: 1.2rem;
-  color: #2f6bff;
+    font-size: 1.2rem;
+    color: #2f6bff;
 }
+
+
 
 
 /*--------- Pagina Contacto --------------------------------------------------------------------------------------------*/
@@ -884,7 +933,7 @@ button.custom-btn {
 }
 
 .btn-mas:hover {
-   background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
     border-color: none;
 }
 
@@ -1087,7 +1136,7 @@ button.custom-btn {
         margin-top: 20px;
         justify-content: center;
         font-size: 1rem;
-        gap:2rem
+        gap: 2rem
     }
 
     .custom-form p {
@@ -1154,22 +1203,22 @@ button.custom-btn {
 
     .contact-container {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         gap: 3.5rem;
-        padding: 0 1.2rem; 
+        padding: 0 1.2rem;
     }
 
     .contact-form {
         width: 100%;
-        max-width: none; 
+        max-width: none;
     }
 
     .right-cards {
-        width: 100%; 
+        width: 100%;
     }
 
     .form-row {
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .form-group {
@@ -1179,7 +1228,7 @@ button.custom-btn {
     .custom-form input,
     .custom-form select,
     .custom-form textarea {
-        width: 100%; 
+        width: 100%;
         box-sizing: border-box;
     }
 
@@ -1189,9 +1238,6 @@ button.custom-btn {
         margin-top: 2.5rem;
     }
 
-    .custom-grid {
-        grid-template-columns: 1fr;
-    }
 
     .summary {
         width: 100%;
@@ -1354,18 +1400,11 @@ button.custom-btn {
         max-width: 100%;
     }
 
-    .custom-grid {
-        grid-template-columns: 2fr 1fr;
-        gap: 3rem;
 
-    }
-
-    
 }
 
 /* Pantallas MUY grandes (monitores grandes) */
 @media (min-width: 1400px) {
-
 
     .custom-container {
         max-width: 1400px;
@@ -1374,7 +1413,7 @@ button.custom-btn {
 
     .custom-grid {
         grid-template-columns: 4fr 3fr;
-        gap: 5rem;
+        gap: 6rem;
     }
 
     .custom-card {
@@ -1384,6 +1423,10 @@ button.custom-btn {
 
     .card-img {
         max-height: 250px;
+    }
+
+    .empty-card-img {
+        height: 500px;
     }
 
     .card-title {
@@ -1482,5 +1525,5 @@ button.custom-btn {
     }
 
 
-   
+
 }
