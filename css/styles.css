@@ -1306,6 +1306,35 @@ button.custom-btn {
         flex-shrink: 0;
     }
 
+    .custom-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .custom-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ingredients, .summary {
+    width: 100%;
+    max-width: 400px; 
+  }
+
+  .custom-card {
+    text-align: center; 
+  }
+
+  .custom-card-title {
+    text-align: left;
+  }
+
+  .custom-grid {
+    gap: 0;
+  }
+
+
+
 
 }
 
