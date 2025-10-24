@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const emptyCardSection = document.querySelector(".empty-card");
   const pedidoSection = document.querySelector(".pedido");
-  const pedidoForm = document.querySelector(".pedido-form");
+
+
+  const pedidoForm = document.querySelector(".pedido-resumen");
   const totalPrecioElemento = pedidoForm.querySelector(".pedido-precio");
+  const hr = pedidoForm.querySelector("hr");
 
   const pedidoGuardado = JSON.parse(localStorage.getItem("pedido")) || [];
-
-  const hr = pedidoForm.querySelector("hr");
 
   if (pedidoGuardado.length === 0) {
     emptyCardSection.classList.remove("d-none");
     pedidoSection.classList.add("d-none");
-    totalPrecioElemento.textContent = `$0.50`;
+    totalPrecioElemento.textContent = `$0.00`;
     hr.style.display = "none";
     return;
   }
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     div.appendChild(tachoDiv);
     div.appendChild(precioDiv);
 
+    
     pedidoForm.insertBefore(div, hr);
 
     totalGeneral += item.subtotal;

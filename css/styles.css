@@ -477,7 +477,7 @@ h1 h2 {
 
 .empty-card-img {
     border-radius: 50%;
-    height: 450px;
+    height: 350px;
     margin-bottom: 1rem;
 }
 
@@ -607,6 +607,27 @@ h1 h2 {
 .pedido-cont.total .pedido-precio {
     font-size: 1.2rem;
     color: #2f6bff;
+}
+
+.pedido-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px; 
+	padding: 40px 40px;
+	align-items: flex-start;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+.pedido {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.form-subtitle {
+    margin-bottom: 1.5rem;
 }
 
 
