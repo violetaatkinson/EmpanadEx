@@ -1355,6 +1355,17 @@ button.custom-btn {
   }
 
 
+  
+.pedido-grid {
+	display: grid;
+	grid-template-columns: 1fr ;
+	padding: 0px 30px;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
 
 
 }
