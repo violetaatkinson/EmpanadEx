@@ -1,0 +1,121 @@
+// ==========================================
+// UTILIDADES
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ========== EXTENDS ==========
+
+%button-style {
+    @include button-base;
+}
+
+%card-style {
+    @include card-base;
+}
+
+%text-center {
+    text-align: center;
+}
+
+%flex-center {
+    @include flex-center;
+}
+
+// ========== CLASES DE UTILIDAD ==========
+
+.no-show {
+    display: inline; // En móvil NO hace salto
+    
+    // En desktop SÍ hace salto
+    @media (min-width: 769px) {
+        display: block;
+    }
+}
+
+.highlight {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: $color-dark;
+}
+
+.azul {
+    color: $color-primary;
+}
+
+.muted {
+    color: $color-gray;
+    font-size: 0.9rem;
+}
+
+.muted-custom {
+    color: $color-gray;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+// ========== CLASES ANIMADAS ==========
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hover-lift {
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    
+    &:hover {
+        transform: translateY(-5px);
+        @include box-shadow(3);
+    }
+}
+
+.hover-scale {
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.hover-rotate {
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: rotate(5deg);
+    }
+}
+
+// ========== EFECTO SHIMMER ==========
+
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        transition: left 0.5s;
+    }
+    
+    &:hover::after {
+        left: 100%;
+    }
+}

@@ -1,0 +1,147 @@
+// ==========================================
+// FORMS
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// ========== CUSTOM FORM ==========
+
+.custom-form {
+    @include box-shadow(4);
+    border-radius: 10px;
+    background-color: $color-white;
+    padding: $spacing-lg;
+
+    p {
+        font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+        transition: all $transition-fast;
+        
+        &:focus {
+            border-color: $color-primary;
+            transform: scale(1.02);
+            @include box-shadow(4);
+        }
+    }
+
+    &--air {
+        padding-bottom: 20px;
+    }
+}
+
+// ========== FORM STRUCTURE ==========
+
+.form-title {
+    font-size: 2rem;
+    @extend %text-center;
+    margin-bottom: $spacing-md;
+}
+
+.form-subtitle {
+    margin-bottom: $spacing-md;
+}
+
+.form-row {
+    @include flex-center(row, center, stretch);
+    gap: $spacing-md;
+    margin-bottom: 0.8rem;
+}
+
+.form-group {
+    flex: 1;
+    @include flex-center(column, flex-start, stretch);
+
+    label {
+        padding-bottom: 8px;
+        transition: color $transition-fast;
+    }
+    
+    &:hover label {
+        color: $color-primary;
+    }
+}
+
+// ========== INPUT FIELDS ==========
+
+input,
+textarea,
+select {
+    padding: $spacing-xs $spacing-sm;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+    outline: none;
+    transition: all $transition-fast;
+    font-size: $spacing-sm;
+    
+    &:focus {
+        border-color: $color-primary;
+        transform: translateY(-2px);
+        @include box-shadow(4);
+    }
+}
+
+// ========== OPTIONS GRID ==========
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-sm $spacing-lg;
+}
+
+.option {
+    @include flex-center(row, flex-start, center);
+    gap: $spacing-xs;
+    line-height: 1.5;
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: translateX(5px);
+        
+        input[type="checkbox"],
+        input[type="radio"] {
+            transform: scale(1.2);
+        }
+    }
+}
+
+// ========== TEXT CLASSES ==========
+
+.text-smaller {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        font-size: $spacing-sm;
+        margin-bottom: 1.1rem;
+        text-align: justify;
+        transition: all $transition-fast;
+        
+        &:hover {
+            transform: translateX(5px);
+            color: $color-primary;
+        }
+    }
+
+    strong {
+        display: inline-block;
+        margin-right: 4px;
+    }
+}
+
+.emoji {
+    display: inline-block;
+    margin-right: 4px;
+    transition: transform $transition-fast;
+    
+    &:hover {
+        animation: rotate 0.5s ease-in-out;
+    }
+}

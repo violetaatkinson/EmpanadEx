@@ -1,0 +1,211 @@
+// ==========================================
+// CARDS
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// ========== CARD GENÉRICA ==========
+
+.card {
+    @extend %card-style;
+    @include flex-center(column, flex-start, stretch);
+    @include fade-in-scale(0.5s);
+    
+    &:hover {
+        transform: translateY(-10px) scale(1.03);
+        @include box-shadow(3);
+        
+        img {
+            transform: scale(1.1); // ← SIN rotate
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        transition: transform $transition-fast;
+    }
+}
+
+.card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    @include flex-center(column, flex-start, stretch);
+}
+
+.card-title {
+    padding-top: 5px;
+    font-size: 1.3rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1.2rem;
+    color: #333;
+    @extend %text-center;
+    transition: color $transition-fast;
+    
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.card-text {
+    font-size: $spacing-sm;
+    color: $color-gray-dark;
+    flex-grow: 1;
+    @extend %text-center;
+
+    br {
+        display: none;
+    }
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-sm 1.2rem;
+    background-color: $color-white;
+    border: none;
+}
+
+.card-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius-sm;
+    margin-bottom: $spacing-sm;
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// ========== INDEX CARDS ==========
+
+.index-card {
+    width: 350px;
+    height: 350px;
+    @extend %card-style;
+    @include flex-center(column);
+    padding: $spacing-sm;
+    @include fade-in-scale(0.6s);
+    
+    &:hover {
+        transform: translateY(-8px) rotate(2deg);
+        @include box-shadow(3);
+    }
+}
+
+.index-cards {
+    @include flex-center(row);
+    gap: $spacing-xxl;
+}
+
+.index-card-img {
+    margin-top: 0.3rem;
+    width: 160px;
+    object-fit: contain;
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: scale(1.1); // ← SIN rotate
+    }
+}
+
+.index-body {
+    @extend %text-center;
+}
+
+.index-title {
+    margin-bottom: 0.9rem;
+    margin-top: 0.8rem;
+}
+
+.index-subtitle {
+    color: $color-gray-light;
+    font-size: $font-weight-normal;
+    font-size: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    margin-top: 0.6rem;
+}
+
+// ========== CUSTOM CARD (PERSONALIZAR) ==========
+
+.custom-card {
+    @extend %card-style;
+    padding: $spacing-md;
+    margin-bottom: 3.5rem;
+    @include fade-in-up(0.6s);
+    
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.custom-card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem !important;
+    font-weight: bold;
+}
+
+// ========== EMPTY CARD (CARRITO VACÍO) ==========
+
+.empty-card {
+    @extend %flex-center;
+    flex-direction: column;
+    @include fade-in-scale(0.8s);
+}
+
+.empty-card-img {
+    border-radius: $border-radius-full;
+    height: 350px;
+    margin-bottom: $spacing-sm;
+    transition: transform $transition-fast;
+    animation: bounce 2s ease-in-out infinite;
+    
+    &:hover {
+        animation-play-state: paused;
+        transform: scale(1.1);
+    }
+}
+
+.empty-card-content {
+    @extend %flex-center;
+    flex-direction: column;
+}
+
+.empty-card-title {
+    padding-bottom: 15px;
+    font-size: 50px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    @include fade-in-up(0.6s, 0.2s);
+}
+
+.empty-card-subtitle {
+    color: $color-gray-light;
+    font-size: 20px;
+    @extend %text-center;
+    font-weight: $font-weight-normal;
+    padding-bottom: 15px;
+    @include fade-in-up(0.6s, 0.4s);
+}
+
+.empty-card-btns {
+    display: flex;
+    gap: 1.7rem;
+    flex-wrap: wrap;
+    @include fade-in-up(0.6s, 0.6s);
+}
+
+// ========== CARDS CONTAINER ==========
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    padding: $spacing-lg;
+}

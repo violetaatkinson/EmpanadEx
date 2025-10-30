@@ -1,0 +1,109 @@
+// ==========================================
+// BUTTONS
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// Botón principal personalizado
+.custom-btn {
+    background: $color-primary;
+    border: 2px solid $color-primary;
+    color: $color-white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all $transition-fast;
+    @include flex-center(row);
+    gap: $spacing-xs;
+
+    &:hover {
+        border: none;
+        @include gradient-primary;
+        transform: translateY(-2px) scale(1.02);
+        @include box-shadow(4);
+    }
+
+    &.full {
+        width: 100%;
+        margin-top: $spacing-lg;
+    }
+}
+
+// Botón del carrito vacío
+.empty-card-btn {
+    @extend %button-style;
+}
+
+// Botones de incremento/decremento
+.btn-signo {
+    font-size: 1.2rem;
+    color: $color-white;
+}
+
+.btn-mas {
+    background-color: $color-success;
+    border-color: $color-success;
+
+    &:hover {
+        @include gradient-success;
+        border-color: none;
+        @include box-shadow(2);
+    }
+}
+
+.btn-menos {
+    background-color: $color-danger;
+    border-color: $color-danger;
+
+    &:hover {
+        @include gradient-danger;
+        border-color: none;
+        @include box-shadow(2);
+    }
+}
+
+// Botones de card
+.card-buttons {
+    display: flex;
+    gap: $spacing-sm;
+
+    button {
+        border-radius: $border-radius-full;
+        transition: all $transition-fast;
+        padding: 0.8rem;
+        border: 2px solid transparent;
+        @extend %flex-center;
+        width: 45px;
+        height: 45px;
+        
+        &:hover {
+            transform: scale(1.15) rotate(15deg);
+        }
+        
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    a,
+    button {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform $transition-fast;
+        
+        &:hover {
+            transform: scale(1.1) rotate(-3deg);
+        }
+    }
+}
+
+button.custom-btn {
+    width: 100%;
+    margin-top: 2.3rem;
+    @extend %text-center;
+    margin-bottom: 0.7rem;
+}

@@ -1,0 +1,173 @@
+// ==========================================
+// PÁGINA CARTA
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// ========== HEADER CARTA ==========
+
+#header-carta {
+    position: relative;
+    background: url("../images/empandas2.jpg") center center / cover no-repeat;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+    }
+}
+
+.hero-content-carta {
+    text-align: center;
+    padding: $spacing-sm;
+    position: relative;
+    z-index: 2;
+    color: $color-white;
+}
+
+// ========== TITLE SECTION ==========
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-title {
+    padding-bottom: 15px;
+    font-size: 50px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+
+.title-paragraph {
+    color: rgb(109, 109, 109);
+    font-size: 20px;
+    text-align: center;
+    font-weight: $font-weight-normal;
+}
+
+// ========== CARDS CONTAINER ==========
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.card {
+    background: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    padding-top: 5px;
+    font-size: 1.3rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    background-color: $color-white !important;
+    border: none !important;
+}
+
+// ========== CANTIDAD Y SUMATORIA ==========
+
+.cantidad {
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    font-size: 1.3rem;
+}
+
+.sumatoria {
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    font-size: 1.3rem;
+    color: #0f3c4a;
+    /* se activa dinámicamente con JS */
+}
+
+// ========== CARD BUTTONS ==========
+
+.card-buttons {
+    display: flex;
+    gap: 1rem;
+
+    button {
+        border-radius: 50%;
+        transition: background 0.3s ease, border 0.3s ease;
+        padding: 0.8rem;
+        border: 2px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.btn-signo {
+    font-size: 1.2rem;
+    color: $color-white;
+}
+
+.btn-mas {
+    background-color: #198754 !important;
+    border-color: #198754;
+
+    &:hover {
+        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+        border-color: none;
+    }
+}
+
+.btn-menos {
+    background-color: #dc3545 !important;
+    border-color: #dc3545;
+
+    &:hover {
+        background-image: linear-gradient(to bottom, #e66773 0%, #dc3545 100%);
+        border-color: none;
+    }
+}

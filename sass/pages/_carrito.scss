@@ -1,0 +1,123 @@
+// ==========================================
+// PÁGINA CARRITO
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// ========== HEADER CARRITO ==========
+
+#header-carrito {
+    @include hero-header("../images/delivery.png", 400px, left center);
+}
+
+.hero-content-carrito {
+    @extend %text-center;
+    padding: $spacing-sm;
+    position: relative;
+    z-index: 2;
+    color: $color-white;
+    @include fade-in-up(0.8s);
+}
+
+// ========== PEDIDO ==========
+
+.pedido {
+    @extend %flex-center;
+    padding: 20px;
+}
+
+.pedido-contenedor {
+    @extend %flex-center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.pedido-form {
+    padding: 20px 30px;
+    border-radius: $border-radius-lg;
+    @include box-shadow(2);
+    width: 100%;
+    max-width: 1000px;
+    background-color: $color-white;
+    @include fade-in-up(0.6s);
+}
+
+.pedido-cont {
+    @include flex-center(row, space-between, center);
+    margin-bottom: 12px;
+    width: 100%;
+    padding: $spacing-xs;
+    border-radius: $border-radius-sm;
+    transition: all $transition-fast;
+    
+    &:hover {
+        background-color: rgba($color-primary, 0.05);
+        transform: translateX(3px);
+    }
+
+    &.total {
+        padding-top: $spacing-sm;
+        margin-top: $spacing-sm;
+        
+        .pedido-precio {
+            font-size: 1.2rem;
+            color: $color-primary;
+        }
+    }
+}
+
+.pedido-info {
+    @include flex-center(column, center, flex-start);
+    flex: 1;
+    text-align: left;
+}
+
+.pedido-nombre {
+    font-size: $spacing-sm;
+    margin: 0;
+}
+
+.pedido-cuanto {
+    font-size: 0.85rem;
+    color: $color-gray-dark;
+    margin-top: 3px;
+}
+
+.detalle-especial {
+    font-style: italic;
+}
+
+.pedido-tacho {
+    width: 50px;
+    @extend %flex-center;
+    cursor: pointer;
+    transition: all $transition-fast;
+    
+    &:hover {
+        transform: scale(1.3) rotate(15deg);
+        color: $color-danger;
+    }
+}
+
+.pedido-precio-div {
+    flex: 1;
+    text-align: right;
+    @include flex-center(row, flex-end, center);
+}
+
+.pedido-precio {
+    font-size: $spacing-sm;
+    font-weight: bold;
+}
+
+.pedido-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 40px 40px;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}

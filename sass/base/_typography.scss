@@ -1,0 +1,31 @@
+// ==========================================
+// TIPOGRAFÍA
+// ==========================================
+
+h1, h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+
+// Clases de utilidad de texto
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-smallest {
+    font-size: 14px;
+}
+
+.mobile-break {
+    display: none;
+}

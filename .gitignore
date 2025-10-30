@@ -1,0 +1,38 @@
+# Node modules (librerías instaladas con npm)
+node_modules/
+
+# Archivos generados automáticamente
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sass cache
+.sass-cache
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build folders (opcional, si generas builds)
+dist/
+build/

@@ -1,0 +1,589 @@
+// ==========================================
+// RESPONSIVE
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ========== MÓVILES (max-width: 571px) ==========
+
+@include respond-to(mobile) {
+    // ========== NAVBAR ==========
+    .nav-item a {
+        font-size: 14px !important;
+    }
+
+    // ========== HERO CONTENT ==========
+    #header-index {
+        padding-left: $spacing-lg;
+        padding-right: $spacing-lg;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.3;
+            margin-bottom: 1.3rem;
+            margin-top: $spacing-md;
+        }
+
+        .d-flex {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: $spacing-xs;
+        }
+    }
+
+    .hero-p {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: $spacing-md;
+        justify-content: center;
+
+        a button {
+            padding: 0.6rem 1rem;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+    }
+
+    // ========== TITLES ==========
+    .title-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+
+    .title-paragraph {
+        font-size: 0.9rem;
+        padding: 0px 15px;
+        text-align: center;
+    }
+
+    // ========== INDEX CARDS (Por qué EmpanadEx) ==========
+    .index-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-xl;
+        padding: $spacing-lg $spacing-sm;
+    }
+
+    .index-card {
+        width: 300px;
+        height: 300px;
+    }
+
+    .index-title {
+        margin-bottom: $spacing-xs;
+        text-align: center;
+    }
+
+    .index-subtitle {
+        text-align: center;
+    }
+
+    .index-card-img {
+        margin-top: 0.1rem;
+        margin-bottom: 0.8rem;
+        width: 130px;
+        object-fit: contain;
+    }
+
+    // ========== INDEX REVIEWS ==========
+    .index-reviews {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: $spacing-lg;
+        padding: $spacing-lg;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(47, 107, 255, 0.8);
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    .index-review {
+        flex: 0 0 80%;
+        max-width: 300px;
+        min-width: 300px;
+        height: auto;
+        padding: $spacing-sm;
+        scroll-snap-align: start;
+        box-sizing: border-box;
+    }
+
+    .index-review-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .index-review-body-tit {
+        font-size: $spacing-sm;
+    }
+
+    .index-review-body-sub {
+        font-size: 0.9rem;
+    }
+
+    .index-review-body-stars {
+        font-size: 18px;
+    }
+
+    // ========== CARRITO ==========
+    #carrito {
+        padding-top: 12px;
+        padding-bottom: 10px;
+    }
+
+    // ========== CARTA ==========
+    .card-container {
+        padding: $spacing-md;
+    }
+
+    .card-buttons {
+        align-content: center;
+        justify-content: center;
+        gap: $spacing-md;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $spacing-xl;
+        padding: $spacing-lg;
+        padding-bottom: 50px;
+    }
+
+    .card-text br {
+        display: none;
+    }
+
+    .card-title {
+        align-items: center;
+        text-align: center;
+        font-size: $spacing-sm;
+    }
+
+    .card-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    // ========== CARRITO VACÍO ==========
+    .empty-card-img {
+        height: 250px;
+    }
+
+    .empty-card-title {
+        text-align: center;
+        font-size: 2rem;
+        margin: 6px;
+    }
+
+    .empty-card-subtitle {
+        font-size: 0.9rem;
+        padding: 0px 5px;
+        margin: 6px;
+        text-align: center;
+    }
+
+    .empty-card-btns {
+        margin-top: 20px;
+        justify-content: center;
+        font-size: $spacing-sm;
+        gap: $spacing-lg;
+        margin-bottom: 50px;
+    }
+
+    // ========== FORMS ==========
+    .custom-form {
+        p {
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+
+    .form-title {
+        font-size: 1.7rem;
+    }
+
+    .form-group {
+        width: 100%;
+
+        label {
+            font-size: 14px;
+        }
+    }
+
+    .custom-select {
+        font-size: 14px;
+    }
+
+    button.custom-btn {
+        width: 100%;
+        padding: 0.7rem $spacing-sm;
+        margin-top: 2.5rem;
+    }
+
+    // ========== TEXT UTILITIES ==========
+    .text-smaller {
+        strong {
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        li {
+            font-size: 14px;
+            line-height: 1.7;
+            word-wrap: break-word;
+        }
+    }
+
+    .emoji {
+        margin-right: 4px !important;
+    }
+
+    .mobile-break {
+        display: inline;
+    }
+
+    .show-mob {
+        display: block;
+    }
+
+    .no-show {
+        display: none;
+    }
+
+    .space-aire {
+        height: 20px; 
+    }
+
+    .text-smallest {
+        font-size: 14px !important;
+    }
+
+    .muted {
+        font-size: 0.8rem;
+    }
+
+    // ========== CONTACTO ==========
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+        padding: 0 1.2rem;
+        padding-bottom: 50px; 
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .right-cards {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    // ========== PERSONALIZAR ==========
+    .summary {
+        width: 100%;
+        margin: 0;
+        margin-top: 0rem; 
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-xs;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-xs;
+        justify-content: flex-start;
+
+        input {
+            width: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .muted {
+            flex-shrink: 0;
+        }
+    }
+
+    .custom-grid {
+        grid-template-columns: 1fr;
+        gap: 0rem; 
+    }
+
+    .custom-container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px; 
+    }
+
+    .ingredients,
+    .summary {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .custom-card {
+        text-align: center;
+    }
+
+    .custom-card-title {
+        text-align: left;
+    }
+
+    // ========== PEDIDO (CARRITO CON ITEMS) ==========
+    .pedido-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0px 15px;
+        padding-bottom: 50px;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pedido-form {
+        padding: 15px 20px;
+        width: 100%;
+    }
+}
+
+// ========== TABLETS (572px - 768px) ==========
+
+@include respond-to(tablet) {
+    .form-row {
+        flex-direction: row;
+        gap: $spacing-xl;
+    }
+
+    .summary {
+        width: 100%;
+    }
+
+    .custom-grid {
+        gap: $spacing-lg;
+    }
+
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: $spacing-xl;
+        align-items: flex-start;
+    }
+
+    .contact-form {
+        flex: 1.2;
+    }
+
+    .right-cards {
+        flex: 1.3;
+        @include flex-center(column, flex-start, stretch);
+        gap: 3.2rem;
+    }
+}
+
+// ========== DESKTOP (769px - 1279px) ==========
+
+@include respond-to(desktop) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-xl;
+        padding: $spacing-lg;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .contact-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        gap: 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 $spacing-sm;
+    }
+
+    .contact-form {
+        flex: 2;
+        padding-left: $spacing-lg;
+        padding-right: $spacing-lg;
+    }
+
+    .right-cards {
+        flex: 3;
+        @include flex-center(column, flex-start, stretch);
+        gap: 3.2rem;
+
+        .card {
+            max-width: 100%;
+        }
+    }
+}
+
+// ========== PANTALLAS GRANDES (min-width: 1400px) ==========
+
+@include respond-to(large) {
+    .custom-container {
+        max-width: 1400px;
+        padding: $spacing-xl;
+    }
+
+    .custom-grid {
+        grid-template-columns: 4fr 3fr;
+        gap: 6rem;
+    }
+
+    .custom-card {
+        padding: $spacing-lg;
+        margin-bottom: 3.5rem;
+    }
+
+    .card-img {
+        max-height: 250px;
+    }
+
+    .empty-card-img {
+        height: 500px;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .option {
+        font-size: 1.1rem;
+    }
+
+    .muted {
+        font-size: 1.1rem;
+    }
+
+    .summary-row {
+        span {
+            font-size: 1.2rem;
+        }
+
+        &.total span {
+            font-size: 1.2rem;
+        }
+    }
+
+    .summary {
+        width: 100%;
+    }
+
+    .summary-img {
+        max-height: 200px;
+    }
+
+    .custom-btn.full {
+        font-size: 1.2rem;
+        padding: $spacing-sm $spacing-md;
+    }
+
+    .contact-container {
+        @include flex-center(row, space-between, flex-start);
+        gap: 5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: $spacing-lg;
+    }
+
+    .contact-form {
+        flex: 2;
+        max-width: 650px;
+        padding: $spacing-lg;
+        @include box-shadow(4);
+        border-radius: 10px;
+        background-color: $color-white;
+        @include flex-center(column, flex-start, stretch);
+        gap: $spacing-md;
+    }
+
+    button.custom-btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .right-cards {
+        flex: 1;
+        @include flex-center(column, flex-start, stretch);
+        gap: 4.5rem;
+        margin-top: $spacing-md;
+
+        .card {
+            width: 100%;
+            padding: $spacing-lg;
+            @include flex-center(column);
+            text-align: center;
+            @include box-shadow(4);
+            border-radius: 10px;
+            background-color: $color-white;
+        }
+    }
+
+    .form-row {
+        @include flex-center(row, center, stretch);
+        gap: $spacing-md;
+        margin-bottom: 0px;
+    }
+
+    .form-group {
+        flex: 1;
+        @include flex-center(column, flex-start, stretch);
+    }
+}
+
+// ========== HIDE SHOW-MOB EN DESKTOP Y TABLETS ==========
+@media (min-width: 572px) {
+    .show-mob {
+        display: none;
+    }
+}

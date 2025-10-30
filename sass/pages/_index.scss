@@ -1,0 +1,223 @@
+// ==========================================
+// PÁGINA INDEX/HOME
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ========== HEADER INDEX ==========
+
+#header-index {
+    position: relative;
+    background: url("../images/empanadas.jpg") center center / cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    overflow: hidden;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: $color-white;
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: $font-weight-bold;
+        line-height: 1.2;
+        margin-bottom: $spacing-md;
+        text-transform: uppercase;
+    }
+}
+
+.hero-p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: $spacing-md;
+    padding-bottom: 14px;
+    line-height: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: $spacing-md;
+
+    a button {
+        border: 2px solid $color-primary;
+        background-color: transparent;
+        box-shadow: 0 4px 10px rgba(47, 128, 199, 0.4);
+        color: $color-white;
+        padding: 0.75rem $spacing-md;
+        border-radius: $border-radius-md;
+        font-size: 1.25rem;
+        transition: all $transition-fast;
+        letter-spacing: 0.1rem;
+
+        &:hover {
+            border: none;
+            @include gradient-primary;
+            color: $color-white;
+        }
+    }
+}
+
+// ========== INDEX CARDS ==========
+
+.index-card {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $color-white;
+    border-radius: $border-radius-lg;
+    @include box-shadow(2);
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    padding: $spacing-sm;
+}
+
+.index-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xxl;
+}
+
+.index-card-img {
+    margin-top: 0.3rem;
+    width: 160px;
+    object-fit: contain;
+}
+
+.index-body {
+    text-align: center;
+}
+
+.index-title {
+    margin-bottom: 0.9rem;
+    margin-top: 0.8rem;
+}
+
+.index-subtitle {
+    color: $color-gray-light;
+    font-size: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    margin-top: 0.6rem;
+}
+
+// ========== INDEX REVIEWS ==========
+
+.index-reviews {
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 1.8rem;
+    padding: $spacing-lg $spacing-md;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(47, 107, 255, 0.5);
+        border-radius: 4px;
+        transition: background-color $transition-fast;
+        
+        &:hover {
+            background-color: rgba(47, 107, 255, 0.8);
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+.index-review {
+    flex: 0 0 auto;
+    width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-white;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    padding: $spacing-md $spacing-sm $spacing-sm $spacing-sm;
+    text-align: center;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.index-review-img {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: $border-radius-full;
+    margin-bottom: 0.4rem;
+    border: 3px solid $color-primary;
+    transition: all $transition-fast;
+}
+
+.index-review-body-tit {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.3rem 0 0.2rem 0;
+}
+
+.index-review-body-sub {
+    color: $color-gray-light;
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
+}
+
+.index-review-body-stars {
+    color: $color-primary;
+    font-size: 20px;
+    margin-top: 0.3rem;
+    margin-bottom: $spacing-xs;
+}
+
+// ========== TITLE SECTIONS ==========
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-title {
+    padding-bottom: 15px;
+    font-size: 50px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+
+.title-paragraph {
+    color: $color-gray-light;
+    font-size: 20px;
+    text-align: center;
+    font-weight: $font-weight-normal;
+}

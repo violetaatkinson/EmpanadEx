@@ -1,0 +1,35 @@
+// ==========================================
+// MAIN.SCSS - Archivo Principal
+// ==========================================
+
+// 1. ABSTRACTS
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'abstracts/animations' as *;
+
+// 2. BASE
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/utilities';
+
+// 3. LAYOUT
+@use 'layout/navbar';
+@use 'layout/footer';
+@use 'layout/hero';
+
+// 4. COMPONENTS
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+@use 'components/progress-bar';
+
+// 5. PAGES
+@use 'pages/index';
+@use 'pages/carta';
+@use 'pages/personalizar';
+@use 'pages/contacto';
+@use 'pages/carrito';
+@use 'pages/gracias';
+
+// 6. RESPONSIVE
+@use 'responsive/responsive';

@@ -1,0 +1,40 @@
+// ==========================================
+// NAVBAR
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+.nav-item {
+    a {
+        font-size: 19px !important;
+        font-weight: $font-weight-normal;
+        color: #000000c2;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    .nav-btn {
+        @extend %button-style;
+        padding: $spacing-xs 1.2rem;
+    }
+}
+
+#main-navbar {
+    @include box-shadow(1);
+    
+    .nav-item .nav-btn {
+        @extend %button-style;
+        padding: $spacing-xs 1.2rem;
+    }
+}
+
+.logo {
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}

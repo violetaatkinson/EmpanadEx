@@ -1,0 +1,55 @@
+// ==========================================
+// PÁGINA CONTACTO
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// ========== HEADER CONTACT ==========
+
+#header-contact {
+    @include hero-header("../images/harina2.jpg", 400px);
+}
+
+.hero-content-contact {
+    @extend %text-center;
+    padding: $spacing-sm;
+    @include fade-in-up(0.8s);
+}
+
+// ========== CONTACT CONTAINER ==========
+
+.contact-container {
+    @include flex-center(row, space-between, flex-start);
+    gap: $spacing-xl;
+    padding: $spacing-xxl;
+}
+
+.contact-form {
+    flex: 1;
+    @include box-shadow(4);
+    border-radius: 10px;
+    background-color: $color-white;
+    gap: $spacing-md;
+    @include fade-in-up(0.6s);
+}
+
+.right-cards {
+    flex: 1;
+    @include flex-center(column, flex-start, stretch);
+    gap: 3.3rem;
+
+    .card {
+        padding: $spacing-xl;
+        @extend %flex-center;
+        flex-direction: column;
+        @extend %text-center;
+        @include fade-in-scale(0.6s, 0.2s);
+        
+        &:hover {
+            transform: translateY(-5px) scale(1.02);
+            @include box-shadow(3);
+        }
+    }
+}

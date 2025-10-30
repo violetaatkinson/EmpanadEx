@@ -1,0 +1,117 @@
+// ==========================================
+// VARIABLES
+// ==========================================
+
+// ========== COLORES ==========
+
+// Colores principales
+$color-primary: #2f6bff;
+$color-primary-dark: #06328f;
+$color-primary-light: #1D8FE1;
+$color-secondary: #625EB1;
+
+// Colores de estado
+$color-success: #198754;
+$color-success-light: #3cba92;
+$color-success-dark: #0ba360;
+
+$color-danger: #dc3545;
+$color-danger-light: #e66773;
+
+$color-warning: #ffc107;
+$color-info: #0dcaf0;
+
+// Colores neutros
+$color-dark: #0f3c4a;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray: #777;
+$color-gray-dark: #555;
+$color-gray-light: rgb(109, 109, 109);
+$color-border: grey;
+
+// ========== TIPOGRAFÍA ==========
+
+// Fuentes
+$font-primary: "Raleway", sans-serif;
+$font-secondary: "Bebas Neue", sans-serif;
+
+// Pesos
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Tamaños de fuente
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3.5rem;
+
+// ========== ESPACIADOS ==========
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
+$spacing-3xl: 5rem;
+
+// ========== BORDES ==========
+
+$border-radius-sm: 5px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-full: 50%;
+
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// ========== SOMBRAS ==========
+
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
+$shadow-xl: 0 6px 16px rgba(0, 0, 0, 0.15);
+$shadow-primary: 2px 2px 10px 2px rgba(47, 128, 199, 0.4);
+
+// ========== TRANSICIONES ==========
+
+$transition-fast: 0.3s ease;
+$transition-normal: 0.5s ease;
+$transition-slow: 1s ease;
+$transition-linear: 1s linear;
+
+// ========== BREAKPOINTS ==========
+
+$breakpoint-mobile: 571px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1279px;
+$breakpoint-large: 1400px;
+
+// ========== Z-INDEX ==========
+
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// ========== TAMAÑOS DE CONTENEDOR ==========
+
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1140px;
+$container-xxl: 1400px;

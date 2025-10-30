@@ -1,0 +1,58 @@
+// ==========================================
+// HERO SECTIONS
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// Hero content genérico
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: $color-white;
+    @include fade-in-up(0.8s);
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: $font-weight-bold;
+        line-height: 1.2;
+        margin-bottom: $spacing-md;
+        text-transform: uppercase;
+        animation: pulse 2s ease-in-out infinite;
+    }
+}
+
+.hero-p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: $spacing-md;
+    padding-bottom: 14px;
+    line-height: 35px;
+    @include fade-in-up(1s, 0.2s);
+}
+
+.hero-buttons {
+    @include flex-center(row, flex-start, center);
+    gap: $spacing-md;
+    @include fade-in-up(1.2s, 0.4s);
+
+    a button {
+        border: 2px solid $color-primary;
+        background-color: transparent;
+        @include box-shadow(4);
+        color: $color-white;
+        padding: 0.75rem $spacing-md;
+        border-radius: $border-radius-md;
+        font-size: 1.25rem;
+        transition: all $transition-fast;
+        letter-spacing: 0.1rem;
+
+        &:hover {
+            border: none;
+            @include gradient-primary;
+            color: $color-white;
+            transform: translateY(-3px) scale(1.05);
+        }
+    }
+}

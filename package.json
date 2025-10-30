@@ -1,0 +1,31 @@
+{
+  "name": "empanadex",
+  "version": "1.0.0",
+  "description": "Sitio web de EmpanadEx - Empanadas artesanales",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:css --style compressed",
+    "sass:build": "sass scss:css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/violetaatkinson/EmpanadEx.git"
+  },
+  "keywords": [
+    "empanadas",
+    "food",
+    "restaurant",
+    "scss",
+    "bootstrap"
+  ],
+  "author": "Violeta Atkinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/violetaatkinson/EmpanadEx/issues"
+  },
+  "homepage": "https://github.com/violetaatkinson/EmpanadEx#readme",
+  "devDependencies": {
+    "sass": "^1.80.7"
+  }
+}

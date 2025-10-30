@@ -21,9 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalGeneral = 0;
 
   pedidoGuardado.forEach((item, index) => {
+    // Contenedor del item
     const div = document.createElement("div");
     div.classList.add("pedido-cont", "item");
 
+    // Info del pedido
     const nombreDiv = document.createElement("div");
     nombreDiv.classList.add("pedido-info");
 
@@ -44,12 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
       nombreDiv.appendChild(cantidadSpan);
     }
 
+    // Botón eliminar (tacho)
     const tachoDiv = document.createElement("div");
     tachoDiv.classList.add("pedido-tacho");
     tachoDiv.innerHTML = trashSVG();
     tachoDiv.dataset.index = index;
     tachoDiv.addEventListener("click", () => eliminarItem(index));
 
+    // Precio del item
     const precioDiv = document.createElement("div");
     precioDiv.classList.add("pedido-precio-div");
 
@@ -58,39 +62,45 @@ document.addEventListener("DOMContentLoaded", () => {
     precioSpan.textContent = `$${item.subtotal.toFixed(2)}`;
     precioDiv.appendChild(precioSpan);
 
+    // Insertar todo en el contenedor
     div.appendChild(nombreDiv);
     div.appendChild(tachoDiv);
     div.appendChild(precioDiv);
 
+    // Insertar antes del hr para mantener el total abajo
     pedidoForm.insertBefore(div, hr);
 
     totalGeneral += item.subtotal;
   });
 
+  // Actualizar total con estilo
   totalPrecioElemento.textContent = `$${totalGeneral.toFixed(2)}`;
+  totalPrecioElemento.classList.add("pedido-precio");
 
-  if (pedidoForm) {
-    pedidoForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+  // Mostrar hr solo si hay items
+  hr.style.display = pedidoGuardado.length > 0 ? "block" : "none";
 
-      const nombreUsuario = document.getElementById("nombre").value.trim();
-      const telefonoUsuario = document.getElementById("telefono").value.trim();
+  // Evento submit del form
+  pedidoForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      if (!nombreUsuario || !telefonoUsuario) {
-        alert("💡 Por favor, completá tu nombre y teléfono antes de confirmar el pedido 😊");
-        return;
-      }
+    const nombreUsuario = document.getElementById("nombre").value.trim();
+    const telefonoUsuario = document.getElementById("telefono").value.trim();
 
-      localStorage.setItem("usuario", JSON.stringify({ nombre: nombreUsuario, telefono: telefonoUsuario }));
-      const ahora = new Date().getTime();
-      localStorage.setItem("pedidoInicio", ahora);
+    if (!nombreUsuario || !telefonoUsuario) {
+      alert("💡 Por favor, completá tu nombre y teléfono antes de confirmar el pedido 😊");
+      return;
+    }
 
-      alert(`✨ ¡Gracias ${nombreUsuario}! Estamos preparando tus empanadas 😋`);
+    localStorage.setItem("usuario", JSON.stringify({ nombre: nombreUsuario, telefono: telefonoUsuario }));
+    const ahora = new Date().getTime();
+    localStorage.setItem("pedidoInicio", ahora);
 
-      localStorage.removeItem("pedido");
-      window.location.href = "gracias.html";
-    });
-  }
+    alert(`✨ ¡Gracias ${nombreUsuario}! Estamos preparando tus empanadas 😋`);
+
+    localStorage.removeItem("pedido");
+    window.location.href = "gracias.html";
+  });
 
   function eliminarItem(index) {
     const pedido = JSON.parse(localStorage.getItem("pedido")) || [];
@@ -106,6 +116,4 @@ document.addEventListener("DOMContentLoaded", () => {
       </svg>
     `;
   }
-
-  hr.style.display = pedidoGuardado.length > 0 ? "block" : "none";
 });

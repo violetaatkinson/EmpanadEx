@@ -1,0 +1,43 @@
+// ==========================================
+// FOOTER
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+#footer {
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.06);
+}
+
+.fst-italic {
+    font-size: 14px;
+    @extend %text-center;
+}
+
+.contacto-icons {
+    font-size: 17px;
+
+    li i {
+        color: $color-dark;
+        transition: all $transition-fast;
+        
+        &:hover {
+            color: $color-primary;
+            transform: scale(1.2) translateY(-3px);
+        }
+    }
+}
+
+.list-unstyled {
+    font-size: 17px;
+
+    li a {
+        transition: all $transition-fast;
+        
+        &:hover {
+            color: $color-primary;
+            transform: translateX(5px);
+        }
+    }
+}

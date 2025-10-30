@@ -1,0 +1,135 @@
+// ==========================================
+// PÁGINA PERSONALIZAR
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/utilities' as *;
+
+// ========== HEADER CUSTOMIZE ==========
+
+#header-customize {
+    position: relative;
+    background: url("../images/fresh3.jpg") center center / cover no-repeat;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+    }
+}
+
+.hero-content-customize {
+    text-align: center;
+    padding: $spacing-sm;
+    color: $color-white;
+    position: relative;
+    z-index: 2;
+}
+
+// ========== CUSTOM CONTAINER ==========
+
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-lg;
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+// ========== SUMMARY ==========
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 450px;
+}
+
+.summary-img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-sm;
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $spacing-xs;
+    transition: all $transition-fast;
+
+    &.total {
+        font-weight: bold;
+        margin-top: $spacing-sm;
+        padding-top: $spacing-sm;
+        // border-top eliminado
+    }
+}
+
+// ========== ESPECIAL ITEMS ==========
+
+.especial-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 10px;
+    padding: $spacing-xs;
+    border-radius: $border-radius-sm;
+    transition: background-color $transition-fast;
+    
+    &:hover {
+        background-color: rgba($color-primary, 0.05);
+    }
+}
+
+.especial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.especial-detalles {
+    font-size: 0.9rem;
+    color: $color-gray-dark;
+    margin-top: 3px;
+    text-align: left;
+}
+
+.trash-icon {
+    cursor: pointer;
+    transition: all $transition-fast;
+    
+    &:hover {
+        color: $color-danger;
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+.espacio-arriba {
+    margin-top: 1.8rem;
+}
