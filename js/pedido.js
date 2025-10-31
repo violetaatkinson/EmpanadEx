@@ -1,9 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => { 
+document.addEventListener("DOMContentLoaded", () => {
   const emptyCardSection = document.querySelector(".empty-card");
   const pedidoSection = document.querySelector(".pedido");
   const pedidoForm = document.querySelector(".pedido-resumen");
   const totalPrecioElemento = pedidoForm.querySelector(".pedido-precio");
   const hr = pedidoForm.querySelector("hr");
+  const tiempoTexto = document.querySelector(".tiempo-pedido"); // suponiendo que tu texto esté en un span con esta clase
 
   const pedidoGuardado = JSON.parse(localStorage.getItem("pedido")) || [];
 
@@ -21,11 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalGeneral = 0;
 
   pedidoGuardado.forEach((item, index) => {
-    // Contenedor del item
     const div = document.createElement("div");
     div.classList.add("pedido-cont", "item");
 
-    // Info del pedido
     const nombreDiv = document.createElement("div");
     nombreDiv.classList.add("pedido-info");
 
@@ -46,14 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
       nombreDiv.appendChild(cantidadSpan);
     }
 
-    // Botón eliminar (tacho)
     const tachoDiv = document.createElement("div");
     tachoDiv.classList.add("pedido-tacho");
     tachoDiv.innerHTML = trashSVG();
     tachoDiv.dataset.index = index;
     tachoDiv.addEventListener("click", () => eliminarItem(index));
 
-    // Precio del item
     const precioDiv = document.createElement("div");
     precioDiv.classList.add("pedido-precio-div");
 
@@ -62,25 +59,28 @@ document.addEventListener("DOMContentLoaded", () => {
     precioSpan.textContent = `$${item.subtotal.toFixed(2)}`;
     precioDiv.appendChild(precioSpan);
 
-    // Insertar todo en el contenedor
     div.appendChild(nombreDiv);
     div.appendChild(tachoDiv);
     div.appendChild(precioDiv);
 
-    // Insertar antes del hr para mantener el total abajo
     pedidoForm.insertBefore(div, hr);
 
     totalGeneral += item.subtotal;
   });
 
-  // Actualizar total con estilo
   totalPrecioElemento.textContent = `$${totalGeneral.toFixed(2)}`;
   totalPrecioElemento.classList.add("pedido-precio");
 
-  // Mostrar hr solo si hay items
   hr.style.display = pedidoGuardado.length > 0 ? "block" : "none";
 
-  // Evento submit del form
+  // Temporizador de 20 minutos para quitar el texto
+  const VEINTE_MINUTOS = 20 * 60 * 1000; // 20 minutos en milisegundos
+  setTimeout(() => {
+    if (tiempoTexto) {
+      tiempoTexto.textContent = ""; // elimina el texto cuando termina
+    }
+  }, VEINTE_MINUTOS);
+
   pedidoForm.addEventListener("submit", (e) => {
     e.preventDefault();
 

@@ -2,12 +2,13 @@
 // RESPONSIVE
 // ==========================================
 
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts/variables'as *;
+@use '../abstracts/mixins'as *;
 
 // ========== MÓVILES (max-width: 571px) ==========
 
 @include respond-to(mobile) {
+
     // ========== NAVBAR ==========
     .nav-item a {
         font-size: 14px !important;
@@ -276,12 +277,16 @@
         display: block;
     }
 
+    .show-tab {
+        display: none;
+    }
+
     .no-show {
         display: none;
     }
 
     .space-aire {
-        height: 20px; 
+        height: 20px;
     }
 
     .text-smallest {
@@ -298,7 +303,7 @@
         flex-direction: column;
         gap: 3.5rem;
         padding: 0 1.2rem;
-        padding-bottom: 50px; 
+        padding-bottom: 50px;
     }
 
     .contact-form {
@@ -318,7 +323,7 @@
     .summary {
         width: 100%;
         margin: 0;
-        margin-top: 0rem; 
+        margin-top: 0rem;
     }
 
     .options-grid {
@@ -351,13 +356,13 @@
 
     .custom-grid {
         grid-template-columns: 1fr;
-        gap: 0rem; 
+        gap: 0rem;
     }
 
     .custom-container {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 30px; 
+        padding-bottom: 30px;
     }
 
     .ingredients,
@@ -389,45 +394,173 @@
         padding: 15px 20px;
         width: 100%;
     }
+
+    // ========== FOOTER ==========
+    .contacto-icons li {
+        font-size: 14px;
+        word-break: break-word;
+    }
 }
 
-// ========== TABLETS (572px - 768px) ==========
+// ========== TABLETS (572px - 1279px) ==========
 
 @include respond-to(tablet) {
+
+    // ========== INDEX - CARDS "POR QUÉ EMPANADEX" ==========
+    .index-cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1.8rem;
+        padding: $spacing-lg 3rem;
+    }
+
+    .index-card {
+        width: 240px;
+        height: 350px;
+        flex: 0 0 auto;
+    }
+
+    // ========== INDEX - REVIEWS ==========
+    .index-reviews {
+        padding: $spacing-lg 3rem;
+    }
+
+    // ========== CARTA ==========
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3rem;
+        padding: $spacing-lg 4rem;
+        padding-bottom: 50px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    // ========== CONTACTO ==========
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        padding: $spacing-lg 2.5rem;
+        padding-bottom: 50px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 850px;
+    }
+
+    .right-cards {
+        width: 100%;
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
     .form-row {
         flex-direction: row;
-        gap: $spacing-xl;
+        gap: $spacing-md;
+    }
+
+    // ========== PERSONALIZAR ==========
+    .custom-container {
+        padding: $spacing-lg 3rem;
+        padding-bottom: 50px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .custom-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
     }
 
     .summary {
         width: 100%;
+        max-width: 700px;
+        margin: 0;
     }
 
-    .custom-grid {
-        gap: $spacing-lg;
+    .ingredients {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
     }
 
-    .contact-container {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: $spacing-xl;
+    .custom-card {
+        width: 100%;
+        max-width: 700px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .custom-card-title {
+        text-align: left;
+    }
+
+    // ========== CARRITO (CON ITEMS) ==========
+    .pedido-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        padding: $spacing-lg 2.5rem;
+        padding-bottom: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
         align-items: flex-start;
+        box-sizing: border-box;
     }
 
-    .contact-form {
-        flex: 1.2;
+    .pedido-form {
+        padding: 30px 35px;
+        width: 100%;
+        max-width: none;
     }
 
-    .right-cards {
-        flex: 1.3;
-        @include flex-center(column, flex-start, stretch);
-        gap: 3.2rem;
+    .form-subtitle.muted-custom {
+        text-align: center !important;
+    }
+
+    // ========== CARRITO VACÍO ==========
+    .empty-card {
+        padding: 0 4rem;
+    }
+
+    // ========== FOOTER ==========
+    footer {
+        padding: 2rem 4rem !important;
+    }
+
+    .contacto-icons li {
+        font-size: 15px;
+        word-break: break-word;
+    }
+
+    // ========== TEXT UTILITIES ==========
+    .show-tab {
+        display: block;
+    }
+
+    .no-show {
+        display: none;
     }
 }
 
 // ========== DESKTOP (769px - 1279px) ==========
 
 @include respond-to(desktop) {
+
+    // ========== CARTA ==========
     .cards-container {
         grid-template-columns: repeat(3, 1fr);
         gap: $spacing-xl;
@@ -440,24 +573,28 @@
         object-fit: contain;
     }
 
+    // ========== CONTACTO ==========
     .contact-container {
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: flex-start;
-        gap: 5rem;
+        gap: 3rem;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 $spacing-sm;
+        padding: $spacing-lg 2rem;
+        padding-bottom: 50px;
     }
 
     .contact-form {
-        flex: 2;
-        padding-left: $spacing-lg;
-        padding-right: $spacing-lg;
+        flex: 1;
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .right-cards {
-        flex: 3;
+        flex: 1;
         @include flex-center(column, flex-start, stretch);
         gap: 3.2rem;
 
@@ -465,9 +602,56 @@
             max-width: 100%;
         }
     }
+
+    // ========== PERSONALIZAR ==========
+    .custom-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: $spacing-lg 2rem;
+    }
+
+    .custom-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+
+    .summary {
+        width: 100%;
+        max-width: none;
+    }
+
+    // ========== PERSONALIZAR - OPCIONES ==========
+    .option {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-xs;
+
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .muted {
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+    }
+
+    // ========== CARRITO (CON ITEMS) ==========
+    .pedido-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: $spacing-lg 2rem;
+        padding-bottom: 50px;
+    }
+    
 }
 
-// ========== PANTALLAS GRANDES (min-width: 1400px) ==========
+// ========== PANTALLAS GRANDES (min-width: 1280px) ==========
 
 @include respond-to(large) {
     .custom-container {
@@ -499,10 +683,21 @@
 
     .option {
         font-size: 1.1rem;
-    }
+        display: flex;
+        align-items: center;
 
-    .muted {
-        font-size: 1.1rem;
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .muted {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
     }
 
     .summary-row {
@@ -579,6 +774,11 @@
         flex: 1;
         @include flex-center(column, flex-start, stretch);
     }
+
+    // ========== TEXT UTILITIES ==========
+    .show-tab {
+        display: none;
+    }
 }
 
 // ========== HIDE SHOW-MOB EN DESKTOP Y TABLETS ==========
@@ -586,4 +786,8 @@
     .show-mob {
         display: none;
     }
+}
+
+.form-subtitle.muted-custom {
+  text-align: center !important;
 }
