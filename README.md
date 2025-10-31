@@ -8,7 +8,7 @@ El sitio presenta una propuesta visual moderna y atractiva para una tienda de em
 Fue desarrollada con el objetivo de aplicar los conocimientos adquiridos en el curso, incluyendo maquetado web, diseño responsivo y buenas prácticas de desarrollo front-end.
 
 ## 🌐 Visita el sitio
-[https://violetaatkinson.github.io/EmpanadEx/](https://violetaatkinson.github.io/EmpanadEx/)
+[https://violetaatkinson.github.io/EmpanadEx/](https://empanad-ex.vercel.app/)
 
 ## 🛠️ Tecnologías utilizadas
 - **HTML5**
